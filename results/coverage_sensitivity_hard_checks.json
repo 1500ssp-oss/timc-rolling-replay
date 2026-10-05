@@ -1,0 +1,19 @@
+{
+  "data1_coverage_max_abs_error": 0.00013351591920574175,
+  "coverage_095_matches_canonical_S_out_max_abs_delta": 1.1102230246251565e-16,
+  "coverage_095_matches_canonical_all_metrics_max_abs_delta": 4.440892098500626e-16,
+  "coverage_095_matches_canonical_by_metric_max_abs_delta": {
+    "S_out": 1.1102230246251565e-16,
+    "S_excess_mean": 1.6653345369377348e-16,
+    "S_excess_cvar95": 4.440892098500626e-16
+  },
+  "c7_mean_excess_favours_pid_all_widths": true,
+  "c7_mean_excess_favours_oc_pid_all_widths": true,
+  "coverages": [
+    0.9,
+    0.95,
+    0.99
+  ],
+  "data1_passes": 13,
+  "data2_files": 10
+}

@@ -1,0 +1,18 @@
+{
+  "test_name": "local_loopback_opcua_integration",
+  "endpoint": "opc.tcp://127.0.0.1:48431/rolling-replay/",
+  "cycles": 10000,
+  "server_restart_events": 1,
+  "client_reconnects": 1,
+  "fallback_counts": {
+    "stale": 199,
+    "bad_status": 200,
+    "model_load_failure": 200
+  },
+  "command_boundary_violations": 0,
+  "command_finite_failures": 0,
+  "latency_ms_p50": 10.5857,
+  "latency_ms_p95": 37.735775,
+  "latency_ms_p99": 51.11409600000001,
+  "scope_limit": "Local server/client loopback only; no plant-side endpoint, PLC, target network, or industrial latency claim."
+}

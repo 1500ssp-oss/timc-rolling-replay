@@ -1,0 +1,13 @@
+﻿omitted_source_sequence,policy,selected_config,selected_predictor,predictor_mean_mase,outer_du_scale,pid_gain_scale,mpc_share,ff_share,clamp_scale,locked_pid_kp_scale,locked_pid_ki_scale,locked_pid_kd_scale,locked_pid_move_limit_scale,scope
+S1,PID,PID-g1.20-du0.80,GRU (frozen Data1 lock),0.8312331297433392,0.8,1.2,0.0,0.0,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S1,OC-PID,ADRC-g1.20-du0.95,GRU (frozen Data1 lock),0.8312331297433392,0.95,1.2,0.0,0.0,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S1,C2,C2-g1.20-du0.80,GRU (frozen Data1 lock),0.8312331297433392,0.8,1.2,0.0,0.42,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S1,C7,C7-Core-g0.75-mpc0.14,GRU (frozen Data1 lock),0.8312331297433392,0.8,0.75,0.14,0.42,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S2,PID,PID-g1.20-du0.80,GRU (frozen Data1 lock),0.8312331297433392,0.8,1.2,0.0,0.0,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S2,OC-PID,ADRC-g1.20-du0.95,GRU (frozen Data1 lock),0.8312331297433392,0.95,1.2,0.0,0.0,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S2,C2,C2-g1.20-du0.80,GRU (frozen Data1 lock),0.8312331297433392,0.8,1.2,0.0,0.42,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S2,C7,C7-Core-g0.75-mpc0.14,GRU (frozen Data1 lock),0.8312331297433392,0.8,0.75,0.14,0.42,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S3,PID,PID-g1.20-du0.80,GRU (frozen Data1 lock),0.8312331297433392,0.8,1.2,0.0,0.0,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S3,OC-PID,ADRC-g1.20-du0.95,GRU (frozen Data1 lock),0.8312331297433392,0.95,1.2,0.0,0.0,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S3,C2,C2-g1.20-du0.80,GRU (frozen Data1 lock),0.8312331297433392,0.8,1.2,0.0,0.42,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)
+S3,C7,C7-Core-g0.75-mpc0.14,GRU (frozen Data1 lock),0.8312331297433392,0.8,0.75,0.14,0.42,1.0,1.6,1.4,0.75,1.4,nominal-only outer source-sequence omission audit (frozen predictor)

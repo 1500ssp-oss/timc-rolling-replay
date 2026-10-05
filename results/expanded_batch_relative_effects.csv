@@ -1,0 +1,9 @@
+﻿comparison,metric,c7_aggregate,baseline_aggregate,relative_effect_pct,zero_denominator,estimand
+C7 vs PID,composite_normalized_RMS,2.7751121480375422,2.7450248250393265,1.096067428016235,False,ratio of final absolute metrics after transition-within-batch and equal-batch aggregation
+C7 vs PID,TV_L_per_100m,10.18402372803336,9.58636923383306,6.234419722651657,False,ratio of final absolute metrics after transition-within-batch and equal-batch aggregation
+C7 vs PID,S_excess_mean,0.4540992586850491,0.6320096843149167,-28.149952452503673,False,ratio of final absolute metrics after transition-within-batch and equal-batch aggregation
+C7 vs PID,S_excess_cvar95,1.4458935344388504,1.634938981985903,-11.562844218040834,False,ratio of final absolute metrics after transition-within-batch and equal-batch aggregation
+C7 vs OC-PID,composite_normalized_RMS,2.7751121480375422,2.7690094044495277,0.22039446952430117,False,ratio of final absolute metrics after transition-within-batch and equal-batch aggregation
+C7 vs OC-PID,TV_L_per_100m,10.18402372803336,8.920904964270976,14.159087769921184,False,ratio of final absolute metrics after transition-within-batch and equal-batch aggregation
+C7 vs OC-PID,S_excess_mean,0.4540992586850491,0.5168905416992394,-12.147887792213927,False,ratio of final absolute metrics after transition-within-batch and equal-batch aggregation
+C7 vs OC-PID,S_excess_cvar95,1.4458935344388504,1.580145675133198,-8.496187586187634,False,ratio of final absolute metrics after transition-within-batch and equal-batch aggregation

@@ -1,0 +1,600 @@
+{
+  "selection_protocol_id": "canonical_pid_replay_segment_gap_v2",
+  "selection_design": "complete 1050-candidate grid; equal arithmetic mean of 13 Data1 pass-level composite normalized RMS scores",
+  "selection_is_leave_one_pass_out": false,
+  "selection_metric": {
+    "field": "composite_normalized_RMS",
+    "formula": "mean(sqrt(mean((T/s_T)^2)), sqrt(mean((h/s_h)^2)), sqrt(mean((S/s_S)^2)))",
+    "pass_aggregation": "equal arithmetic mean across the 13 Data1 passes"
+  },
+  "candidate_count": 1050,
+  "data1_pass_count": 13,
+  "data1_pass_order": [
+    "P14",
+    "P13",
+    "P12",
+    "P04",
+    "P03",
+    "P02",
+    "P01",
+    "P26",
+    "P25",
+    "P24",
+    "P23",
+    "P22",
+    "P21"
+  ],
+  "data_access_scope": {
+    "included_batches": [
+      "I",
+      "IV",
+      "VII"
+    ],
+    "data2_files_opened_by_selection": false,
+    "selection_loader_boundary": "batch_archive.load_batch_passes(included_batches=...)"
+  },
+  "workers": 8,
+  "canonical_pid_config": {
+    "block": "data1_controller_search",
+    "label": "PID-g1.20-du0.60",
+    "scenario_id": "data1_controller_search",
+    "base_control": "C0",
+    "stage_mode": "full",
+    "allocation_mode": "full",
+    "mpc_share": 0.0,
+    "ff_share": 0.0,
+    "use_pid": true,
+    "use_filter": false,
+    "gate_enabled": true,
+    "no_gate_release_gain": false,
+    "clamp_scale": 1.0,
+    "amplitude_bound": null,
+    "dynamic_penalty": true,
+    "force_common_outer_limits": true,
+    "outer_du_scale": 0.6,
+    "pid_gain_scale": 1.2,
+    "adrc_disturbance_scale": 1.0,
+    "stage_source": "position",
+    "speed_slope_threshold": 0.0,
+    "legacy_move_limit_reference_dt_s": 0.5,
+    "timebase": "archived_update",
+    "distance_step_reference_m": 0.81298828125,
+    "gap_ratio_low": 0.4,
+    "gap_ratio_high": 3.0,
+    "outer_du_hard_scale": 2.0,
+    "predictor_bank_path": "",
+    "residual_gain": 0.82,
+    "command_gain_scale": 1.0,
+    "cross_coupling_scale": 1.0,
+    "response_variant": "hybrid",
+    "output_clip_scale": 8.0,
+    "anti_windup_mode": "vectorwise",
+    "audit_energy": false,
+    "measurement_noise_level": 0.0,
+    "reference_kind": "none",
+    "seed_group": "PID-g1.20-du0.60",
+    "comparison_base": "PID-g1.20-du0.60",
+    "actuator_delay_updates": 0,
+    "actuator_deadzone": 0.0,
+    "measurement_delay_updates": 0,
+    "fault_mode": "none"
+  },
+  "seed_rule": {
+    "formula": "RNG_SEED + repeat + 2000*(Data1_order_index + 1)",
+    "RNG_SEED": 20260622,
+    "repeat": 0,
+    "pass_seeds": {
+      "P14": 20262622,
+      "P13": 20264622,
+      "P12": 20266622,
+      "P04": 20268622,
+      "P03": 20270622,
+      "P02": 20272622,
+      "P01": 20274622,
+      "P26": 20276622,
+      "P25": 20278622,
+      "P24": 20280622,
+      "P23": 20282622,
+      "P22": 20284622,
+      "P21": 20286622
+    }
+  },
+  "timebase": {
+    "implementation": "segmented_archived_timebase.derive_segmented_archived_timebase",
+    "innovation_boundaries": "innovation propagation is suppressed across segment boundaries",
+    "distance_step_reference_m": 0.81298828125,
+    "gap_ratio_low": 0.4,
+    "gap_ratio_high": 3.0
+  },
+  "outer_shell": {
+    "candidate_move_limit_scope": "PID internal saturation bounds only",
+    "amplitude_bound_each_channel": 0.55,
+    "base_move_vector": [
+      0.065,
+      0.052,
+      0.065
+    ],
+    "outer_du_scale": 0.6,
+    "nominal_move_vector": [
+      0.039,
+      0.0312,
+      0.039
+    ],
+    "legacy_move_limit_reference_dt_s": 0.5,
+    "rowwise_move_limit_formula": "min(nominal_move*dt_control/0.50, nominal_move*2)",
+    "outer_du_hard_scale": 2.0,
+    "force_common_outer_limits": true,
+    "numerical_state_guardrail_scale": 8.0
+  },
+  "selected": {
+    "kp_scale": 1.6,
+    "ki_scale": 1.4,
+    "kd_scale": 0.75,
+    "move_limit_scale": 1.4
+  },
+  "selected_score_RMS_c": 2.682791531087903,
+  "selected_replayed_equal_pass_mean_RMS_c": 2.682791531087903,
+  "selected_grid_vs_replay_score_abs_delta": 0.0,
+  "selected_replay_checks": [
+    {
+      "pass_id": "P14",
+      "seed": 20262622,
+      "T_normalized_RMS": 5.679557757732391,
+      "h_normalized_RMS": 0.6389061581032928,
+      "S_normalized_RMS": 0.29893446016903175,
+      "composite_normalized_RMS": 2.2057994586682383,
+      "composite_recomputed_from_channels": 2.2057994586682383,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 2155,
+      "reported_segment_count": 7,
+      "formal_segment_count": 7,
+      "logged_valid_transition_count": 2148,
+      "formal_valid_transition_count": 2148,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 2148,
+        "segment_start_local_median": 7
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 2148,
+        "segment_start_local_median": 7
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P13",
+      "seed": 20264622,
+      "T_normalized_RMS": 5.595278625424512,
+      "h_normalized_RMS": 0.6331186565083089,
+      "S_normalized_RMS": 0.478884157481236,
+      "composite_normalized_RMS": 2.2357604798046853,
+      "composite_recomputed_from_channels": 2.2357604798046853,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 1766,
+      "reported_segment_count": 2,
+      "formal_segment_count": 2,
+      "logged_valid_transition_count": 1764,
+      "formal_valid_transition_count": 1764,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 1764,
+        "segment_start_local_median": 2
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 1764,
+        "segment_start_local_median": 2
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P12",
+      "seed": 20266622,
+      "T_normalized_RMS": 5.3530103240351234,
+      "h_normalized_RMS": 0.571178769227781,
+      "S_normalized_RMS": 0.3399785317776019,
+      "composite_normalized_RMS": 2.088055875013502,
+      "composite_recomputed_from_channels": 2.088055875013502,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 1387,
+      "reported_segment_count": 2,
+      "formal_segment_count": 2,
+      "logged_valid_transition_count": 1385,
+      "formal_valid_transition_count": 1385,
+      "logged_timebase_source_counts": {
+        "distance_over_speed": 2,
+        "raw_timestamp_consistent": 1383,
+        "segment_start_local_median": 2
+      },
+      "formal_timebase_source_counts": {
+        "distance_over_speed": 2,
+        "raw_timestamp_consistent": 1383,
+        "segment_start_local_median": 2
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P04",
+      "seed": 20268622,
+      "T_normalized_RMS": 3.166274322680005,
+      "h_normalized_RMS": 0.5864002179071885,
+      "S_normalized_RMS": 0.6113628623974032,
+      "composite_normalized_RMS": 1.4546791343281988,
+      "composite_recomputed_from_channels": 1.4546791343281988,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 1865,
+      "reported_segment_count": 1,
+      "formal_segment_count": 1,
+      "logged_valid_transition_count": 1864,
+      "formal_valid_transition_count": 1864,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 1864,
+        "segment_start_local_median": 1
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 1864,
+        "segment_start_local_median": 1
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P03",
+      "seed": 20270622,
+      "T_normalized_RMS": 2.5454760659065627,
+      "h_normalized_RMS": 0.6094152313214813,
+      "S_normalized_RMS": 1.8881839567252736,
+      "composite_normalized_RMS": 1.681025084651106,
+      "composite_recomputed_from_channels": 1.681025084651106,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 1459,
+      "reported_segment_count": 1,
+      "formal_segment_count": 1,
+      "logged_valid_transition_count": 1458,
+      "formal_valid_transition_count": 1458,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 1458,
+        "segment_start_local_median": 1
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 1458,
+        "segment_start_local_median": 1
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P02",
+      "seed": 20272622,
+      "T_normalized_RMS": 3.558154104854793,
+      "h_normalized_RMS": 0.6370003902891378,
+      "S_normalized_RMS": 0.9839620706454086,
+      "composite_normalized_RMS": 1.7263721885964465,
+      "composite_recomputed_from_channels": 1.7263721885964465,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 1125,
+      "reported_segment_count": 1,
+      "formal_segment_count": 1,
+      "logged_valid_transition_count": 1124,
+      "formal_valid_transition_count": 1124,
+      "logged_timebase_source_counts": {
+        "distance_over_speed": 1,
+        "raw_timestamp_consistent": 1123,
+        "segment_start_local_median": 1
+      },
+      "formal_timebase_source_counts": {
+        "distance_over_speed": 1,
+        "raw_timestamp_consistent": 1123,
+        "segment_start_local_median": 1
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P01",
+      "seed": 20274622,
+      "T_normalized_RMS": 2.516266781361201,
+      "h_normalized_RMS": 0.6403557496380252,
+      "S_normalized_RMS": 1.632719681818026,
+      "composite_normalized_RMS": 1.5964474042724175,
+      "composite_recomputed_from_channels": 1.5964474042724175,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 867,
+      "reported_segment_count": 1,
+      "formal_segment_count": 1,
+      "logged_valid_transition_count": 866,
+      "formal_valid_transition_count": 866,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 866,
+        "segment_start_local_median": 1
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 866,
+        "segment_start_local_median": 1
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P26",
+      "seed": 20276622,
+      "T_normalized_RMS": 2.6821382464180488,
+      "h_normalized_RMS": 0.5993249624443694,
+      "S_normalized_RMS": 3.6529505263385986,
+      "composite_normalized_RMS": 2.3114712450670054,
+      "composite_recomputed_from_channels": 2.3114712450670054,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 1070,
+      "reported_segment_count": 1,
+      "formal_segment_count": 1,
+      "logged_valid_transition_count": 1069,
+      "formal_valid_transition_count": 1069,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 1069,
+        "segment_start_local_median": 1
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 1069,
+        "segment_start_local_median": 1
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P25",
+      "seed": 20278622,
+      "T_normalized_RMS": 6.018566365444431,
+      "h_normalized_RMS": 0.6963743748078083,
+      "S_normalized_RMS": 3.826228507615971,
+      "composite_normalized_RMS": 3.5137230826227372,
+      "composite_recomputed_from_channels": 3.5137230826227372,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 879,
+      "reported_segment_count": 1,
+      "formal_segment_count": 1,
+      "logged_valid_transition_count": 878,
+      "formal_valid_transition_count": 878,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 878,
+        "segment_start_local_median": 1
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 878,
+        "segment_start_local_median": 1
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P24",
+      "seed": 20280622,
+      "T_normalized_RMS": 7.015034195092913,
+      "h_normalized_RMS": 0.6050682344724277,
+      "S_normalized_RMS": 3.889272520279988,
+      "composite_normalized_RMS": 3.8364583166151096,
+      "composite_recomputed_from_channels": 3.8364583166151096,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 702,
+      "reported_segment_count": 1,
+      "formal_segment_count": 1,
+      "logged_valid_transition_count": 701,
+      "formal_valid_transition_count": 701,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 701,
+        "segment_start_local_median": 1
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 701,
+        "segment_start_local_median": 1
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P23",
+      "seed": 20282622,
+      "T_normalized_RMS": 8.010657721631343,
+      "h_normalized_RMS": 0.6696451470528738,
+      "S_normalized_RMS": 5.159320241696791,
+      "composite_normalized_RMS": 4.613207703460336,
+      "composite_recomputed_from_channels": 4.613207703460336,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 560,
+      "reported_segment_count": 1,
+      "formal_segment_count": 1,
+      "logged_valid_transition_count": 559,
+      "formal_valid_transition_count": 559,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 559,
+        "segment_start_local_median": 1
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 559,
+        "segment_start_local_median": 1
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P22",
+      "seed": 20284622,
+      "T_normalized_RMS": 8.034099065578992,
+      "h_normalized_RMS": 0.6401585304882808,
+      "S_normalized_RMS": 2.441171110433723,
+      "composite_normalized_RMS": 3.705142902166999,
+      "composite_recomputed_from_channels": 3.705142902166999,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 433,
+      "reported_segment_count": 1,
+      "formal_segment_count": 1,
+      "logged_valid_transition_count": 432,
+      "formal_valid_transition_count": 432,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 432,
+        "segment_start_local_median": 1
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 432,
+        "segment_start_local_median": 1
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    },
+    {
+      "pass_id": "P21",
+      "seed": 20286622,
+      "T_normalized_RMS": 8.123002018644405,
+      "h_normalized_RMS": 0.5752386079006849,
+      "S_normalized_RMS": 3.026200460082776,
+      "composite_normalized_RMS": 3.9081470288759554,
+      "composite_recomputed_from_channels": 3.9081470288759554,
+      "composite_reconstruction_abs_delta": 0.0,
+      "logged_row_count": 337,
+      "reported_segment_count": 1,
+      "formal_segment_count": 1,
+      "logged_valid_transition_count": 336,
+      "formal_valid_transition_count": 336,
+      "logged_timebase_source_counts": {
+        "raw_timestamp_consistent": 336,
+        "segment_start_local_median": 1
+      },
+      "formal_timebase_source_counts": {
+        "raw_timestamp_consistent": 336,
+        "segment_start_local_median": 1
+      },
+      "max_outer_slew_violation": 0.0,
+      "max_outer_amplitude_violation": 0.0,
+      "checks": {
+        "row_count_matches_input": true,
+        "segment_ids_match_formal_timebase": true,
+        "timebase_sources_match_formal_timebase": true,
+        "segment_count_matches_formal_timebase": true,
+        "valid_transition_count_matches_segments": true,
+        "outer_slew_limits_respected": true,
+        "outer_amplitude_bound_respected": true
+      }
+    }
+  ],
+  "selected_max_composite_reconstruction_abs_delta": 0.0,
+  "selected_all_replay_contract_checks_pass": true,
+  "frozen_manifest_lock": {
+    "kp_scale": 1.6,
+    "ki_scale": 1.4,
+    "kd_scale": 0.75,
+    "move_limit_scale": 1.4
+  },
+  "selected_matches_frozen_lock": true,
+  "scale_lock_id": "data1-gauge-nearest-v1",
+  "scale_lock_method": "nearest Data1 recipe in Euclidean log(entry gauge), log(exit gauge) space; lexical pass_id tie-break",
+  "scale_lock_payload_sha256": "8f9030436474e6fc9590cf7d6d2e4e286ce122f7c3ca2e5ae46de877c6275808",
+  "scale_lock_data1_passes": 13,
+  "scale_lock_path": "config/data1_scale_lock.json"
+}

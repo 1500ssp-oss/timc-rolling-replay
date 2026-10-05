@@ -1,0 +1,13 @@
+{
+  "learned_predictor_target": "one archived update ahead",
+  "control_information_row": "k",
+  "last_input_row": "k",
+  "input_window": "archived features from k-W+1 through k",
+  "prediction_target_row": "k+1",
+  "command_formed_at": "k, before the action-dependent replay state advances to k+1",
+  "input_source": "fixed archived exogenous features, not policy-state-refilled predictions",
+  "fallback": "current measurement at segment boundaries, final rows, or insufficient segment-local history",
+  "internal_planning_horizon_updates": 10,
+  "horizon_population": "the single one-update prediction is zero-order held across ten internal planning stages",
+  "not_claimed": "ten distinct future predictions or a fixed five-second physical horizon"
+}

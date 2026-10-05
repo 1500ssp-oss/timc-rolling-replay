@@ -1,0 +1,166 @@
+[
+  {
+    "id": "residual_0.90",
+    "config": "config/stress/scenario_01_residual_0.90.json",
+    "changes": {
+      "residual_gain": 0.9,
+      "measurement_noise_level": 0.0
+    }
+  },
+  {
+    "id": "residual_1.10",
+    "config": "config/stress/scenario_02_residual_1.10.json",
+    "changes": {
+      "residual_gain": 1.1,
+      "measurement_noise_level": 0.0
+    }
+  },
+  {
+    "id": "residual_1.20",
+    "config": "config/stress/scenario_03_residual_1.20.json",
+    "changes": {
+      "residual_gain": 1.2,
+      "measurement_noise_level": 0.0
+    }
+  },
+  {
+    "id": "residual_1.35",
+    "config": "config/stress/scenario_04_residual_1.35.json",
+    "changes": {
+      "residual_gain": 1.35,
+      "measurement_noise_level": 0.0
+    }
+  },
+  {
+    "id": "noise_0.01",
+    "config": "config/stress/scenario_05_noise_0.01.json",
+    "changes": {
+      "residual_gain": 0.82,
+      "measurement_noise_level": 0.01
+    }
+  },
+  {
+    "id": "noise_0.03",
+    "config": "config/stress/scenario_06_noise_0.03.json",
+    "changes": {
+      "residual_gain": 0.82,
+      "measurement_noise_level": 0.03
+    }
+  },
+  {
+    "id": "noise_0.05",
+    "config": "config/stress/scenario_07_noise_0.05.json",
+    "changes": {
+      "residual_gain": 0.82,
+      "measurement_noise_level": 0.05
+    }
+  },
+  {
+    "id": "noise_0.08",
+    "config": "config/stress/scenario_08_noise_0.08.json",
+    "changes": {
+      "residual_gain": 0.82,
+      "measurement_noise_level": 0.08
+    }
+  },
+  {
+    "id": "bound_0.55",
+    "config": "config/stress/scenario_09_bound_0.55.json",
+    "changes": {
+      "residual_gain": 0.82,
+      "measurement_noise_level": 0.0,
+      "clamp_scale": 0.55
+    }
+  },
+  {
+    "id": "bound_0.60",
+    "config": "config/stress/scenario_10_bound_0.60.json",
+    "changes": {
+      "residual_gain": 0.82,
+      "measurement_noise_level": 0.0,
+      "clamp_scale": 0.6
+    }
+  },
+  {
+    "id": "bound_0.70",
+    "config": "config/stress/scenario_11_bound_0.70.json",
+    "changes": {
+      "residual_gain": 0.82,
+      "measurement_noise_level": 0.0,
+      "clamp_scale": 0.7
+    }
+  },
+  {
+    "id": "bound_0.80",
+    "config": "config/stress/scenario_12_bound_0.80.json",
+    "changes": {
+      "residual_gain": 0.82,
+      "measurement_noise_level": 0.0,
+      "clamp_scale": 0.8
+    }
+  },
+  {
+    "id": "joint_g1.10_n0.03",
+    "config": "config/stress/scenario_13_joint_g1.10_n0.03.json",
+    "changes": {
+      "residual_gain": 1.1,
+      "measurement_noise_level": 0.03
+    }
+  },
+  {
+    "id": "joint_g1.10_n0.05",
+    "config": "config/stress/scenario_14_joint_g1.10_n0.05.json",
+    "changes": {
+      "residual_gain": 1.1,
+      "measurement_noise_level": 0.05
+    }
+  },
+  {
+    "id": "joint_g1.20_n0.03",
+    "config": "config/stress/scenario_15_joint_g1.20_n0.03.json",
+    "changes": {
+      "residual_gain": 1.2,
+      "measurement_noise_level": 0.03
+    }
+  },
+  {
+    "id": "joint_g1.20_n0.05",
+    "config": "config/stress/scenario_16_joint_g1.20_n0.05.json",
+    "changes": {
+      "residual_gain": 1.2,
+      "measurement_noise_level": 0.05
+    }
+  },
+  {
+    "id": "joint_g1.35_n0.05",
+    "config": "config/stress/scenario_17_joint_g1.35_n0.05.json",
+    "changes": {
+      "residual_gain": 1.35,
+      "measurement_noise_level": 0.05
+    }
+  },
+  {
+    "id": "joint_g1.35_n0.08",
+    "config": "config/stress/scenario_18_joint_g1.35_n0.08.json",
+    "changes": {
+      "residual_gain": 1.35,
+      "measurement_noise_level": 0.08
+    }
+  },
+  {
+    "id": "joint_g0.90_n0.03",
+    "config": "config/stress/scenario_19_joint_g0.90_n0.03.json",
+    "changes": {
+      "residual_gain": 0.9,
+      "measurement_noise_level": 0.03
+    }
+  },
+  {
+    "id": "joint_g0.90_n0.05",
+    "config": "config/stress/scenario_20_joint_g0.90_n0.05.json",
+    "changes": {
+      "residual_gain": 0.9,
+      "measurement_noise_level": 0.05
+    }
+  }
+]

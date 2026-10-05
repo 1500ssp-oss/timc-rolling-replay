@@ -1,0 +1,441 @@
+{
+  "scope": "Independent public-table recomputation; not raw-data replay, historical training reconstruction or plant validation.",
+  "numpy_version": "2.3.5",
+  "pandas_version": "3.0.3",
+  "production_units": {
+    "data2_batches": 4,
+    "data2_passes": 10,
+    "data2_conditions": 8,
+    "data1_batches": 3
+  },
+  "tables": {
+    "passed": true,
+    "max_publication_abs_difference": 5.684341886080802e-14,
+    "table3_max_abs_difference": 1.7763568394002505e-15,
+    "episode_max_abs_difference": 5.684341886080802e-14,
+    "episode_frequency_rank_ascending": {
+      "C2": 2.588294180649968,
+      "PID": 2.608560713449984,
+      "OC-PID": 2.922170465447964,
+      "C7-Core": 2.931336583592177
+    },
+    "episodes_equal_condition": {
+      "C2": {
+        "episodes_per_100m": 2.588294180649968,
+        "integrated_severity_excess_m": 215.20702597321747,
+        "peak_excess_norm": 5.024124291366105
+      },
+      "C7-Core": {
+        "episodes_per_100m": 2.931336583592177,
+        "integrated_severity_excess_m": 181.80680260196732,
+        "peak_excess_norm": 4.948108160662784
+      },
+      "OC-PID": {
+        "episodes_per_100m": 2.922170465447964,
+        "integrated_severity_excess_m": 213.2664951569766,
+        "peak_excess_norm": 5.066860975013246
+      },
+      "PID": {
+        "episodes_per_100m": 2.608560713449984,
+        "integrated_severity_excess_m": 264.25391968042516,
+        "peak_excess_norm": 5.146347164454271
+      }
+    },
+    "band_max_abs_difference": 4.440892098500626e-16,
+    "band_additivity_and_metric_crosscheck_max_error": 4.440892098500626e-16,
+    "band_equal_condition": {
+      "C2": {
+        "below_frequency": 0.5747409767152812,
+        "above_frequency": 0.14282217017814589,
+        "recorded_band_departure_frequency": 0.7175631468934272,
+        "below_mean_distance": 0.33700974276410595,
+        "above_mean_distance": 0.16516593956461154,
+        "two_sided_mean_distance": 0.5021756823287175,
+        "below_cvar95_component": 0.7906884502073793,
+        "above_cvar95_component": 0.8763790049564908,
+        "two_sided_cvar95": 1.6670674551638702
+      },
+      "C7-Core": {
+        "below_frequency": 0.5685207198460844,
+        "above_frequency": 0.14282217017814589,
+        "recorded_band_departure_frequency": 0.7113428900242302,
+        "below_mean_distance": 0.276350491322772,
+        "above_mean_distance": 0.16506847726922658,
+        "two_sided_mean_distance": 0.4414189685919986,
+        "below_cvar95_component": 0.7319647314096245,
+        "above_cvar95_component": 0.8763790049564908,
+        "two_sided_cvar95": 1.6083437363661153
+      },
+      "OC-PID": {
+        "below_frequency": 0.5661104229329561,
+        "above_frequency": 0.1414266448859429,
+        "recorded_band_departure_frequency": 0.7075370678188989,
+        "below_mean_distance": 0.33360565334557346,
+        "above_mean_distance": 0.16291605161035727,
+        "two_sided_mean_distance": 0.49652170495593073,
+        "below_cvar95_component": 0.8533097243142893,
+        "above_cvar95_component": 0.8763790049564908,
+        "two_sided_cvar95": 1.72968872927078
+      },
+      "PID": {
+        "below_frequency": 0.5735989053373212,
+        "above_frequency": 0.1431468455028212,
+        "recorded_band_departure_frequency": 0.7167457508401424,
+        "below_mean_distance": 0.425481613981933,
+        "above_mean_distance": 0.16499909970761753,
+        "two_sided_mean_distance": 0.5904807136895506,
+        "below_cvar95_component": 0.8969707010815953,
+        "above_cvar95_component": 0.8763790049564908,
+        "two_sided_cvar95": 1.773349706038086
+      }
+    },
+    "PID_minus_C7_mean_distance_components": {
+      "below_mean_distance": 0.149131122659161,
+      "above_mean_distance": -6.93775616090464e-05,
+      "two_sided_mean_distance": 0.149061745097552
+    },
+    "antiwindup_descriptive_aggregate_ratio_effects": [
+      {
+        "mode": "per_channel",
+        "baseline": "PID",
+        "mean_distance_aggregate_ratio_pct": -9.812666680879978,
+        "tail_distance_aggregate_ratio_pct": -2.6472402812971585
+      },
+      {
+        "mode": "per_channel",
+        "baseline": "OC-PID",
+        "mean_distance_aggregate_ratio_pct": 4.599347525307573,
+        "tail_distance_aggregate_ratio_pct": 1.5113847583479778
+      },
+      {
+        "mode": "per_channel",
+        "baseline": "C2",
+        "mean_distance_aggregate_ratio_pct": 3.5300901751522673,
+        "tail_distance_aggregate_ratio_pct": 1.9033370384544668
+      },
+      {
+        "mode": "vectorwise",
+        "baseline": "PID",
+        "mean_distance_aggregate_ratio_pct": -25.24413442162352,
+        "tail_distance_aggregate_ratio_pct": -9.304762005493961
+      },
+      {
+        "mode": "vectorwise",
+        "baseline": "OC-PID",
+        "mean_distance_aggregate_ratio_pct": -11.097749768828924,
+        "tail_distance_aggregate_ratio_pct": -7.015423691627043
+      },
+      {
+        "mode": "vectorwise",
+        "baseline": "C2",
+        "mean_distance_aggregate_ratio_pct": -12.098696905229357,
+        "tail_distance_aggregate_ratio_pct": -3.522576043090131
+      }
+    ],
+    "scope": "File -> equal condition aggregation and additive historical-band identities; ratios in the anti-windup screen are descriptive, not Table 4 paired estimates."
+  },
+  "paired_bootstrap": {
+    "passed": true,
+    "seed": 20260712,
+    "draws_each": 10000,
+    "comparisons": [
+      {
+        "metric": "composite_normalized_RMS",
+        "comparison": "C7-Core vs PID",
+        "point_pct": 1.3642240668980934,
+        "condition_ci": [
+          0.4106909584387594,
+          2.3614849661940385
+        ],
+        "batch_ci": [
+          0.09509102127837268,
+          2.8896981175943917
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 4.440892098500626e-16,
+        "batch_relative_effects_pct": {
+          "II": -0.25683566004661657,
+          "III": 3.500617672876403,
+          "V": 1.4076466299154198,
+          "VI": 2.2586784041775916
+        }
+      },
+      {
+        "metric": "composite_normalized_RMS",
+        "comparison": "C7-Core vs OC-PID",
+        "point_pct": 0.25222189619587154,
+        "condition_ci": [
+          -0.2661297012184776,
+          0.8431110477648495
+        ],
+        "batch_ci": [
+          -0.3909540950501474,
+          1.0485867212654698
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 5.551115123125783e-17,
+        "batch_relative_effects_pct": {
+          "II": -0.4679773525547868,
+          "III": 0.2967447582279907,
+          "V": 0.29201647051110236,
+          "VI": 0.9443153328307465
+        }
+      },
+      {
+        "metric": "composite_normalized_RMS",
+        "comparison": "C7-Core vs C2",
+        "point_pct": 0.7158234298739141,
+        "condition_ci": [
+          0.24899854578981137,
+          1.1611146974769426
+        ],
+        "batch_ci": [
+          0.0278566270678536,
+          1.3249588492642694
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 8.326672684688674e-17,
+        "batch_relative_effects_pct": {
+          "II": -0.1052311238616999,
+          "III": 1.2407796979864323,
+          "V": 1.185294471279307,
+          "VI": 1.2054022137702243
+        }
+      },
+      {
+        "metric": "TV_L_per_100m",
+        "comparison": "C7-Core vs PID",
+        "point_pct": 12.81094081588164,
+        "condition_ci": [
+          3.2738406450587574,
+          20.864311958887473
+        ],
+        "batch_ci": [
+          -4.526805266566916,
+          20.63109910900264
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 7.105427357601002e-15,
+        "batch_relative_effects_pct": {
+          "II": 21.715604855532018,
+          "III": -3.6035344936553155,
+          "V": -4.834562190870781,
+          "VI": 15.25960288166106
+        }
+      },
+      {
+        "metric": "TV_L_per_100m",
+        "comparison": "C7-Core vs OC-PID",
+        "point_pct": 13.038153631694557,
+        "condition_ci": [
+          8.510302219758739,
+          17.621580041634868
+        ],
+        "batch_ci": [
+          7.649498385564904,
+          18.58052151299688
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 1.7763568394002505e-15,
+        "batch_relative_effects_pct": {
+          "II": 8.908291272079511,
+          "III": 7.9083558710752415,
+          "V": 17.370254041667614,
+          "VI": 17.433915108191687
+        }
+      },
+      {
+        "metric": "TV_L_per_100m",
+        "comparison": "C7-Core vs C2",
+        "point_pct": -7.479735163638217,
+        "condition_ci": [
+          -12.406282075513447,
+          -3.1317714821631673
+        ],
+        "batch_ci": [
+          -16.231919131059474,
+          -2.7804330998816567
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 1.7763568394002505e-15,
+        "batch_relative_effects_pct": {
+          "II": -1.3417394998072851,
+          "III": -15.386094934338143,
+          "V": -16.956522644390454,
+          "VI": -7.823348410318432
+        }
+      },
+      {
+        "metric": "S_excess_mean",
+        "comparison": "C7-Core vs PID",
+        "point_pct": -22.58058435708301,
+        "condition_ci": [
+          -35.37002673673148,
+          -9.324116979755374
+        ],
+        "batch_ci": [
+          -40.520806180451444,
+          -4.235770164847315
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 7.105427357601002e-15,
+        "batch_relative_effects_pct": {
+          "II": -0.001979152994565784,
+          "III": -25.379007679268057,
+          "V": -42.53930001534571,
+          "VI": -37.573476567688864
+        }
+      },
+      {
+        "metric": "S_excess_mean",
+        "comparison": "C7-Core vs OC-PID",
+        "point_pct": -10.273991448805727,
+        "condition_ci": [
+          -17.225698330776428,
+          -3.036670011604616
+        ],
+        "batch_ci": [
+          -20.360720814970136,
+          -0.11119742667969286
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 5.551115123125783e-17,
+        "batch_relative_effects_pct": {
+          "II": 1.0707163708937648,
+          "III": -7.108163518329973,
+          "V": -13.183011019238412,
+          "VI": -21.704302055186236
+        }
+      },
+      {
+        "metric": "S_excess_mean",
+        "comparison": "C7-Core vs C2",
+        "point_pct": -12.005088000637894,
+        "condition_ci": [
+          -19.663987484141302,
+          -4.562797510224523
+        ],
+        "batch_ci": [
+          -23.025532030742948,
+          -2.477433582795691
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 3.552713678800501e-15,
+        "batch_relative_effects_pct": {
+          "II": -0.07439529692396986,
+          "III": -9.80121676453665,
+          "V": -24.303416683710513,
+          "VI": -20.57096155536136
+        }
+      },
+      {
+        "metric": "S_excess_cvar95",
+        "comparison": "C7-Core vs PID",
+        "point_pct": -11.618393900457574,
+        "condition_ci": [
+          -18.43350365656931,
+          -4.906688145487328
+        ],
+        "batch_ci": [
+          -21.001264663011767,
+          -1.7869896809924093
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 0.0,
+        "batch_relative_effects_pct": {
+          "II": 0.0,
+          "III": -14.114010012968459,
+          "V": -17.869896809924093,
+          "VI": -20.32108146025601
+        }
+      },
+      {
+        "metric": "S_excess_cvar95",
+        "comparison": "C7-Core vs OC-PID",
+        "point_pct": -8.640424808965705,
+        "condition_ci": [
+          -14.24455461923565,
+          -2.948687623535147
+        ],
+        "batch_ci": [
+          -16.574236264862247,
+          -0.773901547821966
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 0.0,
+        "batch_relative_effects_pct": {
+          "II": 0.0,
+          "III": -3.095606191287864,
+          "V": -16.550920582314617,
+          "VI": -16.492290566041053
+        }
+      },
+      {
+        "metric": "S_excess_cvar95",
+        "comparison": "C7-Core vs C2",
+        "point_pct": -4.71953156586653,
+        "condition_ci": [
+          -7.4552108497541365,
+          -1.8952608361476255
+        ],
+        "batch_ci": [
+          -8.619745955804882,
+          -0.806851558970299
+        ],
+        "n_conditions": 8,
+        "n_files": 10,
+        "n_batches": 4,
+        "max_publication_abs_difference": 8.881784197001252e-16,
+        "batch_relative_effects_pct": {
+          "II": 0.0,
+          "III": -4.761514982678735,
+          "V": -8.06851558970299,
+          "VI": -8.30874065151684
+        }
+      }
+    ],
+    "max_publication_abs_difference": 7.105427357601002e-15,
+    "scope": "Independent recomputation of public file-relative estimands and both nested bootstrap protocols; not raw-data replay or extra production replication."
+  },
+  "tail_cardinality": {
+    "passed": true,
+    "quantile": 0.95,
+    "valid_quantile_range": "0 <= q < 1",
+    "tail_count_rule": "ceil((1-q)*N), q interpreted as its decimal value; no fractional boundary weighting",
+    "pass_policy_rows": 40,
+    "max_count_difference": 0.0,
+    "mismatches": [],
+    "scope": "Independent Fraction-based count check for distributed canonical pass-level band-tail records; no private trajectories required."
+  },
+  "diagonal_mpc": {
+    "passed": true,
+    "cases": 4000,
+    "max_unclipped_move_difference": 5.329070518200751e-15,
+    "max_internal_command_difference": 1.1102230246251565e-16,
+    "max_normal_equation_residual": 2.2737367544323206e-13,
+    "scope": "Canonical diagonal response; held ten-stage error, fixed weights, unit fixed move penalty; internal increment and command clipping included. Does not test all noncanonical modes."
+  },
+  "passed": true
+}

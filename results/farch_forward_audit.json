@@ -1,0 +1,922 @@
+{
+  "schema_version": 1,
+  "diagnostic_id": "data1_farch_zero_innovation_forward_discrepancy_v1",
+  "generated_at_utc": "2026-09-30T06:51:43.673172+00:00",
+  "interpretation_boundary": "Rolling-origin forward discrepancy diagnostic only; not physical or causal validation of a production plant.",
+  "state_origin": "recorded current/lag outputs at every eligible origin plus hidden state reconstructed from the start of the same supported segment",
+  "rollout": {
+    "u": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "ext": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "proc": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "innovation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "allocation": true,
+    "model_variant": "plant_step default hybrid",
+    "horizons_updates": [
+      1,
+      5,
+      10,
+      20
+    ],
+    "guardrail_scales": [
+      8.0,
+      "infinite"
+    ],
+    "target_boundary_rule": "origin and target must share segment_id",
+    "primary_design": "rolling_origin"
+  },
+  "timebase": {
+    "implementation": "segmented_archived_timebase.derive_segmented_archived_timebase",
+    "distance_step_reference_m": 0.81298828125,
+    "targets_cross_segment": false
+  },
+  "inputs": {
+    "batch_root": "<BATCH_ROOT>",
+    "data1_batches": [
+      "I",
+      "IV",
+      "VII"
+    ],
+    "all_data1_pass_ids": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P12",
+      "P13",
+      "P14",
+      "P21",
+      "P22",
+      "P23",
+      "P24",
+      "P25",
+      "P26"
+    ],
+    "evaluated_pass_ids": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P12",
+      "P13",
+      "P14",
+      "P21",
+      "P22",
+      "P23",
+      "P24",
+      "P25",
+      "P26"
+    ],
+    "pass_limit": 0,
+    "max_origins_per_segment": 0,
+    "inventory": [
+      {
+        "pass_id": "P01",
+        "batch": "I",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.350->0.215",
+        "analysis_condition": "0.350->0.215",
+        "rows": 867,
+        "file": "P01.csv",
+        "sha256": "0df03ed66c99138c2314d5dfc8d60edf92e53b3ffddc63c8b4ba0725dbf0f468"
+      },
+      {
+        "pass_id": "P02",
+        "batch": "I",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.215->0.163",
+        "analysis_condition": "0.215->0.163",
+        "rows": 1125,
+        "file": "P02.csv",
+        "sha256": "050bca52b489b4ac1a932a9729ed684d0ee84b3f836514abb30e6ccc01311c2c"
+      },
+      {
+        "pass_id": "P03",
+        "batch": "I",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.163->0.126",
+        "analysis_condition": "0.163->0.126",
+        "rows": 1459,
+        "file": "P03.csv",
+        "sha256": "c63dbf2e5f3db6939eacdf4c870ad3f2bbc39b4e04d8e7722907a3bdee1dff67"
+      },
+      {
+        "pass_id": "P04",
+        "batch": "I",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.126->0.098",
+        "analysis_condition": "0.126->0.098",
+        "rows": 1865,
+        "file": "P04.csv",
+        "sha256": "63253be54339ab59258d5bb328cbd7921fd3de8018bb4fa29a6aefb7d25775b3"
+      },
+      {
+        "pass_id": "P12",
+        "batch": "IV",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.098->0.069",
+        "analysis_condition": "0.098->0.069",
+        "rows": 1387,
+        "file": "P12.csv",
+        "sha256": "c2b4640eaa1a33449835fc904c6d5bc666fb787aa3b95e76935aff1698b87030"
+      },
+      {
+        "pass_id": "P13",
+        "batch": "IV",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.069->0.052",
+        "analysis_condition": "0.069->0.052",
+        "rows": 1766,
+        "file": "P13.csv",
+        "sha256": "fd6c32ab6f19ef83f08cff621e38399d3b9b39cdc80cc59b808de37b9b08d720"
+      },
+      {
+        "pass_id": "P14",
+        "batch": "IV",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.052->0.040",
+        "analysis_condition": "0.052->0.040",
+        "rows": 2155,
+        "file": "P14.csv",
+        "sha256": "52a0fea1da208ec43a702e6878c3c4ac64fdbb00f19128018600b52c58211838"
+      },
+      {
+        "pass_id": "P21",
+        "batch": "VII",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "1.500->1.120",
+        "analysis_condition": "1.500->1.120",
+        "rows": 337,
+        "file": "P21.csv",
+        "sha256": "f95543f66ae0709d8e254efc8b34f8d40cee223a0ac96e44133987bef3343900"
+      },
+      {
+        "pass_id": "P22",
+        "batch": "VII",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "1.120->0.860",
+        "analysis_condition": "1.120->0.860",
+        "rows": 433,
+        "file": "P22.csv",
+        "sha256": "bd0c1037284d0e5ab4607cf72db550ac4a28f0fe23c62998b03ba2a70a7d1319"
+      },
+      {
+        "pass_id": "P23",
+        "batch": "VII",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.860->0.669",
+        "analysis_condition": "0.860->0.669",
+        "rows": 560,
+        "file": "P23.csv",
+        "sha256": "de72e671a1bfa0b570e443fbad714e44f07df0ab59eb78a3a6da444b22514917"
+      },
+      {
+        "pass_id": "P24",
+        "batch": "VII",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.669->0.531",
+        "analysis_condition": "0.669->0.531",
+        "rows": 702,
+        "file": "P24.csv",
+        "sha256": "b795d3422be529f0c43bb99f0895320ef38f63e51231629072d4392c4ffcaf30"
+      },
+      {
+        "pass_id": "P25",
+        "batch": "VII",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.531->0.427",
+        "analysis_condition": "0.531->0.427",
+        "rows": 879,
+        "file": "P25.csv",
+        "sha256": "5fd0ce0934116bfd44d3ef4ac4f4bd00949a33786cb004972ae9fc516530554b"
+      },
+      {
+        "pass_id": "P26",
+        "batch": "VII",
+        "source": "Data1",
+        "role": "data1_source",
+        "transition": "0.427->0.350",
+        "analysis_condition": "0.427->0.350",
+        "rows": 1070,
+        "file": "P26.csv",
+        "sha256": "2019dde23b9f8f84746972c0f5e371064fc10fb7dbd1b07e5d6da780e5221465"
+      }
+    ]
+  },
+  "hard_checks": {
+    "rolling_origin_h1_vs_stored_innovations": {
+      "definition": "recorded_target_minus_F_arch_prediction",
+      "eligible_transitions_checked": 14584,
+      "scalar_values_checked": 43752,
+      "bitwise_equal": true,
+      "within_machine_precision": true,
+      "max_abs_difference": 0.0,
+      "machine_precision_tolerance": 1.4815669417584887e-12,
+      "sign_mismatch_count": 0,
+      "eligible_transitions_from_state_reconstruction": 14584,
+      "complete_coverage": true,
+      "complete_coverage_required": true
+    },
+    "per_pass_state_reconstruction": [
+      {
+        "eligible_transitions": 866,
+        "eligible_scalar_values": 2598,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 1.1336249898400763e-13,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 1124,
+        "eligible_scalar_values": 3372,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 1.199661299159234e-13,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 1458,
+        "eligible_scalar_values": 4374,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 1.903645779371591e-13,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 1864,
+        "eligible_scalar_values": 5592,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 2.06662873658507e-13,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 1385,
+        "eligible_scalar_values": 4155,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 3.76365125094051e-14,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 1764,
+        "eligible_scalar_values": 5292,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 6.472626832661185e-14,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 2148,
+        "eligible_scalar_values": 6444,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 9.613047590536444e-14,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 336,
+        "eligible_scalar_values": 1008,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 1.4815669417584887e-12,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 432,
+        "eligible_scalar_values": 1296,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 5.178960638712728e-13,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 559,
+        "eligible_scalar_values": 1677,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 4.751512304009572e-13,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 701,
+        "eligible_scalar_values": 2103,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 9.684235524216682e-13,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 878,
+        "eligible_scalar_values": 2634,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 1.0052465837719635e-12,
+        "sign_mismatch_count": 0
+      },
+      {
+        "eligible_transitions": 1069,
+        "eligible_scalar_values": 3207,
+        "bitwise_equal": true,
+        "within_machine_precision": true,
+        "max_abs_difference": 0.0,
+        "machine_precision_tolerance": 1.2724064164117157e-12,
+        "sign_mismatch_count": 0
+      }
+    ],
+    "frozen_recorded_envelope": {
+      "frozen_path": "config/reference_run/03_nominal/audit/data1_stage_quantile_envelope_p025_p975.csv",
+      "frozen_sha256": "7c70f1b39c507cfb4b6ee330b3cb9a326243a23c50f681b632da1a336fbd1489",
+      "recomputed_matches_frozen": true,
+      "max_abs_difference": 3.1942913591986866e-11,
+      "comparison_tolerance": 1e-10,
+      "recorded_rows": 14605,
+      "recorded_passes": 13,
+      "phases": [
+        "accel",
+        "decel",
+        "steady"
+      ],
+      "lopo_folds": 13
+    },
+    "all_predictions_finite": true,
+    "all_targets_within_segment": true,
+    "all_required_guardrail_horizon_pairs_present": true
+  },
+  "counts": {
+    "data1_passes_loaded": 13,
+    "passes_evaluated": 13,
+    "prediction_rows": 115528,
+    "long_channel_rows": 346584,
+    "prediction_rows_by_guardrail_horizon": [
+      {
+        "guardrail_label": "infinite",
+        "horizon_updates": 1,
+        "rows": 14584
+      },
+      {
+        "guardrail_label": "infinite",
+        "horizon_updates": 5,
+        "rows": 14500
+      },
+      {
+        "guardrail_label": "infinite",
+        "horizon_updates": 10,
+        "rows": 14413
+      },
+      {
+        "guardrail_label": "infinite",
+        "horizon_updates": 20,
+        "rows": 14267
+      },
+      {
+        "guardrail_label": "scale_8",
+        "horizon_updates": 1,
+        "rows": 14584
+      },
+      {
+        "guardrail_label": "scale_8",
+        "horizon_updates": 5,
+        "rows": 14500
+      },
+      {
+        "guardrail_label": "scale_8",
+        "horizon_updates": 10,
+        "rows": 14413
+      },
+      {
+        "guardrail_label": "scale_8",
+        "horizon_updates": 20,
+        "rows": 14267
+      }
+    ],
+    "pass_audits": [
+      {
+        "pass_id": "P01",
+        "rows": 867,
+        "segments": 1,
+        "evaluated_origins": 866,
+        "prediction_rows": 6864,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 866,
+          "segment_start_local_median": 1
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 866,
+          "eligible_scalar_values": 2598,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 1.1336249898400763e-13,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P02",
+        "rows": 1125,
+        "segments": 1,
+        "evaluated_origins": 1124,
+        "prediction_rows": 8928,
+        "timebase_source_counts": {
+          "distance_over_speed": 1,
+          "raw_timestamp_consistent": 1123,
+          "segment_start_local_median": 1
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 1124,
+          "eligible_scalar_values": 3372,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 1.199661299159234e-13,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P03",
+        "rows": 1459,
+        "segments": 1,
+        "evaluated_origins": 1458,
+        "prediction_rows": 11600,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 1458,
+          "segment_start_local_median": 1
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 1458,
+          "eligible_scalar_values": 4374,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 1.903645779371591e-13,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P04",
+        "rows": 1865,
+        "segments": 1,
+        "evaluated_origins": 1864,
+        "prediction_rows": 14848,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 1864,
+          "segment_start_local_median": 1
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 1864,
+          "eligible_scalar_values": 5592,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 2.06662873658507e-13,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P12",
+        "rows": 1387,
+        "segments": 2,
+        "evaluated_origins": 1385,
+        "prediction_rows": 10988,
+        "timebase_source_counts": {
+          "distance_over_speed": 2,
+          "raw_timestamp_consistent": 1383,
+          "segment_start_local_median": 2
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 1385,
+          "eligible_scalar_values": 4155,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 3.76365125094051e-14,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P13",
+        "rows": 1766,
+        "segments": 2,
+        "evaluated_origins": 1764,
+        "prediction_rows": 14024,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 1764,
+          "segment_start_local_median": 2
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 1764,
+          "eligible_scalar_values": 5292,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 6.472626832661185e-14,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P14",
+        "rows": 2155,
+        "segments": 7,
+        "evaluated_origins": 2148,
+        "prediction_rows": 16860,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 2148,
+          "segment_start_local_median": 7
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 2148,
+          "eligible_scalar_values": 6444,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 9.613047590536444e-14,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P21",
+        "rows": 337,
+        "segments": 1,
+        "evaluated_origins": 336,
+        "prediction_rows": 2624,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 336,
+          "segment_start_local_median": 1
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 336,
+          "eligible_scalar_values": 1008,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 1.4815669417584887e-12,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P22",
+        "rows": 433,
+        "segments": 1,
+        "evaluated_origins": 432,
+        "prediction_rows": 3392,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 432,
+          "segment_start_local_median": 1
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 432,
+          "eligible_scalar_values": 1296,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 5.178960638712728e-13,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P23",
+        "rows": 560,
+        "segments": 1,
+        "evaluated_origins": 559,
+        "prediction_rows": 4408,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 559,
+          "segment_start_local_median": 1
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 559,
+          "eligible_scalar_values": 1677,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 4.751512304009572e-13,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P24",
+        "rows": 702,
+        "segments": 1,
+        "evaluated_origins": 701,
+        "prediction_rows": 5544,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 701,
+          "segment_start_local_median": 1
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 701,
+          "eligible_scalar_values": 2103,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 9.684235524216682e-13,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P25",
+        "rows": 879,
+        "segments": 1,
+        "evaluated_origins": 878,
+        "prediction_rows": 6960,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 878,
+          "segment_start_local_median": 1
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 878,
+          "eligible_scalar_values": 2634,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 1.0052465837719635e-12,
+          "sign_mismatch_count": 0
+        }
+      },
+      {
+        "pass_id": "P26",
+        "rows": 1070,
+        "segments": 1,
+        "evaluated_origins": 1069,
+        "prediction_rows": 8488,
+        "timebase_source_counts": {
+          "raw_timestamp_consistent": 1069,
+          "segment_start_local_median": 1
+        },
+        "state_reconstruction_h1_check": {
+          "eligible_transitions": 1069,
+          "eligible_scalar_values": 3207,
+          "bitwise_equal": true,
+          "within_machine_precision": true,
+          "max_abs_difference": 0.0,
+          "machine_precision_tolerance": 1.2724064164117157e-12,
+          "sign_mismatch_count": 0
+        }
+      }
+    ]
+  },
+  "recorded_envelopes": {
+    "quantiles": [
+      0.025,
+      0.975
+    ],
+    "phase_specific": true,
+    "normalization": "each recorded/predicted value divided by its pass's frozen Data1 scale",
+    "scopes": {
+      "frozen_all_data1": "frozen canonical all-Data1 phase envelope",
+      "leave_one_pass_out": "held-out pass excluded; phase envelope rebuilt from the other 12 Data1 passes"
+    },
+    "occupancy_object": "forward prediction at the recorded target phase/time",
+    "recorded_target_occupancy_also_reported": true
+  },
+  "software": {
+    "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.3.5",
+    "pandas": "3.0.3"
+  },
+  "dependency_sha256": {
+    "code/farch_forward_diagnostic.py": "f9a8690a49c86cc015ebdecf20af9fc2577a3940f7c45841e44fee1608d1c544",
+    "code/protocol.py": "3ad762538acb2bae8f56b8d021aa0b8cac69b53b39224e21e3a99177d8e20508",
+    "code/batch_archive.py": "5a834d4e9b2eb579180c50f1ed0d71687280011dc662266c69248c59edf0175e",
+    "code/segmented_archived_timebase.py": "09fa6c90f7129f0937e274e36be146c7be3db632ddbe9ba0fd298b38d523c7c2",
+    "code/engine_core/15_realdata_closed_loop_suite.py": "06148ff8e58380437bf0d82fe160c86f6d59b98ad5e5bab8aaf6fe7f4c303bc7",
+    "code/engine_core/20_independent_replay_validation.py": "d8142d343f238cf3a0f804f35359761e768c74b66dd808ae0705e68350b73d44",
+    "config/data1_scale_lock.json": "c1d56ca44f53cf44db93fd92fa35fbab465fcac43a63c98b86f24d92b0aae545",
+    "data_map/production_batch_map.csv": "3591adb2c0c10213902e5ab2a077a7ab7a134cf882dc7764091c40729d7f93f4",
+    "config/reference_run/03_nominal/audit/data1_stage_quantile_envelope_p025_p975.csv": "7c70f1b39c507cfb4b6ee330b3cb9a326243a23c50f681b632da1a336fbd1489"
+  },
+  "outputs": {
+    "farch_forward_summary.csv": {
+      "path": "farch_forward_summary.csv",
+      "sha256": "7e391715b187d885cf262ff5c94e4883809a3072c4bf3b02fb7a3338527a3a93",
+      "rows": 48,
+      "columns": [
+        "aggregation",
+        "guardrail_label",
+        "guardrail_scale",
+        "horizon_updates",
+        "channel",
+        "n_origins",
+        "n_passes",
+        "n_segments",
+        "discrepancy_mean",
+        "mae",
+        "rmse",
+        "discrepancy_norm_mean",
+        "mae_norm",
+        "rmse_norm",
+        "median_abs_discrepancy_norm",
+        "p95_abs_discrepancy_norm",
+        "max_abs_discrepancy_norm",
+        "correlation_norm",
+        "r2_norm",
+        "guardrail_trajectory_activation_rate",
+        "guardrail_any_channel_trajectory_activation_rate",
+        "guardrail_step_channel_activation_rate",
+        "eight_scale_boundary_crossing_rate",
+        "prediction_guardrail_occupancy_p95",
+        "prediction_guardrail_occupancy_max",
+        "prediction_beyond_8scale_rate",
+        "recorded_target_guardrail_occupancy_p95",
+        "recorded_target_guardrail_occupancy_max",
+        "recorded_target_beyond_8scale_rate"
+      ]
+    },
+    "farch_forward_by_pass.csv": {
+      "path": "farch_forward_by_pass.csv",
+      "sha256": "5cb6030f60b45838832d61893215f96b88bd284b62c9868dfda17b85b270d91e",
+      "rows": 312,
+      "columns": [
+        "pass_id",
+        "guardrail_label",
+        "guardrail_scale",
+        "horizon_updates",
+        "channel",
+        "n_origins",
+        "n_passes",
+        "n_segments",
+        "discrepancy_mean",
+        "mae",
+        "rmse",
+        "discrepancy_norm_mean",
+        "mae_norm",
+        "rmse_norm",
+        "median_abs_discrepancy_norm",
+        "p95_abs_discrepancy_norm",
+        "max_abs_discrepancy_norm",
+        "correlation_norm",
+        "r2_norm",
+        "guardrail_trajectory_activation_rate",
+        "guardrail_any_channel_trajectory_activation_rate",
+        "guardrail_step_channel_activation_rate",
+        "eight_scale_boundary_crossing_rate",
+        "prediction_guardrail_occupancy_p95",
+        "prediction_guardrail_occupancy_max",
+        "prediction_beyond_8scale_rate",
+        "recorded_target_guardrail_occupancy_p95",
+        "recorded_target_guardrail_occupancy_max",
+        "recorded_target_beyond_8scale_rate",
+        "condition_id",
+        "batch"
+      ]
+    },
+    "farch_forward_by_pass_segment.csv": {
+      "path": "farch_forward_by_pass_segment.csv",
+      "sha256": "281918a099b8d8602cfd003f403861bd56789007f489817278245aa6b204178e",
+      "rows": 426,
+      "columns": [
+        "pass_id",
+        "segment_id",
+        "guardrail_label",
+        "guardrail_scale",
+        "horizon_updates",
+        "channel",
+        "n_origins",
+        "n_passes",
+        "n_segments",
+        "discrepancy_mean",
+        "mae",
+        "rmse",
+        "discrepancy_norm_mean",
+        "mae_norm",
+        "rmse_norm",
+        "median_abs_discrepancy_norm",
+        "p95_abs_discrepancy_norm",
+        "max_abs_discrepancy_norm",
+        "correlation_norm",
+        "r2_norm",
+        "guardrail_trajectory_activation_rate",
+        "guardrail_any_channel_trajectory_activation_rate",
+        "guardrail_step_channel_activation_rate",
+        "eight_scale_boundary_crossing_rate",
+        "prediction_guardrail_occupancy_p95",
+        "prediction_guardrail_occupancy_max",
+        "prediction_beyond_8scale_rate",
+        "recorded_target_guardrail_occupancy_p95",
+        "recorded_target_guardrail_occupancy_max",
+        "recorded_target_beyond_8scale_rate",
+        "condition_id",
+        "batch",
+        "first_origin_k",
+        "last_origin_k",
+        "first_target_k",
+        "last_target_k"
+      ]
+    },
+    "farch_recorded_envelopes.csv": {
+      "path": "farch_recorded_envelopes.csv",
+      "sha256": "0ec132c464dbe9dde938d2d7048884d70b790bb86eb575531ba8d9bc4ba402df",
+      "rows": 126,
+      "columns": [
+        "envelope_scope",
+        "held_out_pass_id",
+        "phase",
+        "channel",
+        "lower_norm",
+        "upper_norm",
+        "median_norm",
+        "training_rows_in_phase",
+        "training_pass_count",
+        "source"
+      ]
+    },
+    "farch_recorded_envelope_occupancy.csv": {
+      "path": "farch_recorded_envelope_occupancy.csv",
+      "sha256": "378ba70cba22974a851bf32a404c454d7b8633ba03cf439a5f0eb9c529ae98ff",
+      "rows": 96,
+      "columns": [
+        "aggregation",
+        "envelope_scope",
+        "guardrail_label",
+        "guardrail_scale",
+        "horizon_updates",
+        "channel",
+        "n_origins",
+        "n_passes",
+        "n_segments",
+        "prediction_inside_rate",
+        "recorded_target_inside_rate",
+        "prediction_outside_excess_mean",
+        "prediction_outside_excess_p95",
+        "prediction_outside_excess_max",
+        "recorded_target_outside_excess_mean",
+        "recorded_target_outside_excess_p95",
+        "recorded_target_outside_excess_max",
+        "inside_status_agreement_rate"
+      ]
+    },
+    "farch_recorded_envelope_occupancy_by_pass.csv": {
+      "path": "farch_recorded_envelope_occupancy_by_pass.csv",
+      "sha256": "642bc6afdc9203b5c74b1a8855405f8a338007bbc7223b87c43aa8ed59e182b0",
+      "rows": 624,
+      "columns": [
+        "envelope_scope",
+        "pass_id",
+        "guardrail_label",
+        "guardrail_scale",
+        "horizon_updates",
+        "channel",
+        "n_origins",
+        "n_passes",
+        "n_segments",
+        "prediction_inside_rate",
+        "recorded_target_inside_rate",
+        "prediction_outside_excess_mean",
+        "prediction_outside_excess_p95",
+        "prediction_outside_excess_max",
+        "recorded_target_outside_excess_mean",
+        "recorded_target_outside_excess_p95",
+        "recorded_target_outside_excess_max",
+        "inside_status_agreement_rate",
+        "condition_id",
+        "batch"
+      ]
+    }
+  },
+  "runtime_seconds_before_audit_write": 338.03584149999915
+}

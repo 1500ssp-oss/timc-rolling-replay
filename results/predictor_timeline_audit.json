@@ -1,0 +1,13 @@
+{
+  "protocol": "observation/control row k -> target archived row k+1",
+  "feature_information_cutoff": "row k inclusive; no target feature values",
+  "eligibility": "training-compatible same-segment warm-up, window and next target",
+  "fallback": "current-value persistence at ineligible rows and last archive row",
+  "planning_stages": "repeat one-update forecast, not recursive multi-step prediction",
+  "scope": "synthetic regression tests and direct inference with frozen CPU GRU; no private data or training",
+  "checkpoint_sha256": "7cd67420191e291e9afc2d588d36f7fd9cb7ed21b2fcda46b40277a04ed770f3",
+  "tests_run": 8,
+  "failures": 0,
+  "errors": 0,
+  "passed": true
+}

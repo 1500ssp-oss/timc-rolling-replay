@@ -1,0 +1,6 @@
+﻿expected_root_cause,predicted_root_cause,events
+communication_bad_status,communication_bad_status,200
+communication_stale,communication_stale,199
+communication_stale,unclassified,1
+input_unit_inconsistency,input_unit_inconsistency,4
+model_availability,model_availability,200

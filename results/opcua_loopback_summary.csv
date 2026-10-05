@@ -1,0 +1,5 @@
+﻿Item,Result
+Cycles,10000
+Server restarts / client reconnects,1 / 1
+Latency p95 / p99 (ms),37.736 / 51.114
+Command-boundary violations,0

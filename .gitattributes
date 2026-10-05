@@ -1,0 +1,2 @@
+# Preserve the frozen package's byte-level SHA256 checks across platforms.
+* -text

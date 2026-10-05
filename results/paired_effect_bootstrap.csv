@@ -1,0 +1,13 @@
+﻿metric,comparison,estimand,point_pct,bootstrap_mean_pct,bootstrap_se_pct,ci_low_pct,ci_high_pct,n_conditions,n_passes,zero_denominator_rows,bootstrap_draws
+composite_normalized_RMS,C7 vs PID,"mean file-relative effect within transition, then equal-transition mean",1.3642240668980934,1.376284663589512,0.5042819254656525,0.4106909584387594,2.3614849661940385,8,10,0,10000
+composite_normalized_RMS,C7 vs OC-PID,"mean file-relative effect within transition, then equal-transition mean",0.25222189619587154,0.2508794038834353,0.2866718532706507,-0.2661297012184776,0.8431110477648495,8,10,0,10000
+composite_normalized_RMS,C7 vs C2,"mean file-relative effect within transition, then equal-transition mean",0.7158234298739141,0.7163726920651141,0.2364865455767108,0.24899854578981137,1.1611146974769426,8,10,0,10000
+TV_L_per_100m,C7 vs PID,"mean file-relative effect within transition, then equal-transition mean",12.81094081588164,12.812506816897708,4.579456655549454,3.2738406450587574,20.864311958887473,8,10,0,10000
+TV_L_per_100m,C7 vs OC-PID,"mean file-relative effect within transition, then equal-transition mean",13.038153631694557,13.02881837074602,2.3241730761020487,8.510302219758739,17.621580041634868,8,10,0,10000
+TV_L_per_100m,C7 vs C2,"mean file-relative effect within transition, then equal-transition mean",-7.479735163638217,-7.494689044018957,2.3573706674331496,-12.406282075513447,-3.1317714821631673,8,10,0,10000
+S_excess_mean,C7 vs PID,"mean file-relative effect within transition, then equal-transition mean",-22.58058435708301,-22.455159817187127,6.626099797645099,-35.37002673673148,-9.324116979755374,8,10,0,10000
+S_excess_mean,C7 vs OC-PID,"mean file-relative effect within transition, then equal-transition mean",-10.273991448805727,-10.252292457076406,3.609128110812202,-17.225698330776428,-3.036670011604616,8,10,0,10000
+S_excess_mean,C7 vs C2,"mean file-relative effect within transition, then equal-transition mean",-12.005088000637894,-12.005824680202341,3.818852417215423,-19.663987484141302,-4.562797510224523,8,10,0,10000
+S_excess_cvar95,C7 vs PID,"mean file-relative effect within transition, then equal-transition mean",-11.618393900457574,-11.689625223042084,3.469836059483296,-18.43350365656931,-4.906688145487328,8,10,0,10000
+S_excess_cvar95,C7 vs OC-PID,"mean file-relative effect within transition, then equal-transition mean",-8.640424808965705,-8.679519046214127,2.7994905227948355,-14.24455461923565,-2.948687623535147,8,10,0,10000
+S_excess_cvar95,C7 vs C2,"mean file-relative effect within transition, then equal-transition mean",-4.71953156586653,-4.7099450926500195,1.4294133997028675,-7.4552108497541365,-1.8952608361476255,8,10,0,10000

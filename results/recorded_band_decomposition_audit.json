@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "definition": {
+    "below": "max(S_norm_lo - S_normalized, 0)",
+    "above": "max(S_normalized - S_norm_hi, 0)",
+    "total": "below + above",
+    "tail": "mean of the largest ceil(0.05*n) total-distance rows per file",
+    "tail_component_rule": "below and above use the same rows selected by total distance"
+  },
+  "interpretation": "two-sided distance from the Data1 recorded operating band; not a one-sided flatness-quality or safety metric",
+  "aggregation": "equal thickness transition; files first averaged within transition",
+  "row_count": 22052,
+  "file_count": 40,
+  "condition_count": 8,
+  "policy_count": 4,
+  "legacy_file_anchor_max_abs_delta": {
+    "S_out": 1.1102230246251565e-16,
+    "S_excess_mean": 6.661338147750939e-16,
+    "S_excess_cvar95": 1.3322676295501878e-15
+  },
+  "max_abs_additive_mean_identity_delta": 0.0,
+  "max_abs_additive_cvar_identity_delta": 0.0,
+  "guardrail_alignment": {
+    "rule": "transition flags at k are shifted to reached row k+1 within segment",
+    "original_flag_counts": {
+      "transition_evaluated": 21980,
+      "any_active": 1923,
+      "S_active": 723
+    },
+    "aligned_reached_row_counts": {
+      "transition_reached": 21980,
+      "any_active_reached": 1923,
+      "S_active_reached": 723
+    },
+    "segment_first_rows_with_aligned_flag": 0,
+    "aligned_S_rows_at_positive_8": 723,
+    "aligned_S_rows_at_negative_8": 0,
+    "note": "descriptive row composition only; transition flags are shifted from row k to row k+1 within segment; no causal attribution"
+  }
+}

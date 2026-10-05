@@ -1,0 +1,26 @@
+[
+  {
+    "target": "exit_tension_error",
+    "selected_model": "Persistence",
+    "mean_MASE": 1.0,
+    "one_se_threshold": 1.0,
+    "best_model": "Persistence",
+    "note": "Regenerated from results/predictor_lopo_one_se_summary.csv (13-fold mean of the best model plus its fold SE)."
+  },
+  {
+    "target": "exit_thickness_dev",
+    "selected_model": "GRU",
+    "mean_MASE": 0.8312331297433392,
+    "one_se_threshold": 0.8694641321679766,
+    "best_model": "GRU",
+    "note": "GRU fold mean 0.8312331297433392 plus fold SE 0.038231002424637464; LSTM and Transformer also lie within one SE."
+  },
+  {
+    "target": "flatness_std",
+    "selected_model": "Persistence",
+    "mean_MASE": 1.0,
+    "one_se_threshold": 1.0,
+    "best_model": "Persistence",
+    "note": "Regenerated from results/predictor_lopo_one_se_summary.csv (13-fold mean of the best model plus its fold SE)."
+  }
+]

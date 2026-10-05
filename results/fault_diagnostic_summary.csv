@@ -1,0 +1,5 @@
+﻿fault_family,source,events,detection_rate,bounded_command_rate,localization_accuracy
+bad_status,local_opcua_loopback,200,1.0,1.0,1.0
+input_unit_consistency,deterministic_replay_injection,4,1.0,1.0,1.0
+model_failure,local_opcua_loopback,200,1.0,1.0,1.0
+stale,local_opcua_loopback,200,0.995,1.0,0.995

@@ -1,0 +1,9 @@
+{
+  "kp_scale": 1.6,
+  "ki_scale": 1.4,
+  "kd_scale": 0.75,
+  "move_limit_scale": 1.4,
+  "score_metric": "composite_normalized_RMS",
+  "score_RMS_c": 2.682791531087903,
+  "selection_protocol_id": "canonical_pid_replay_segment_gap_v2"
+}

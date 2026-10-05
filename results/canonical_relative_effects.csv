@@ -1,0 +1,16 @@
+﻿comparison,metric,c7_aggregate,baseline_aggregate,relative_effect_pct,zero_denominator,estimand
+C7 vs PID,composite_normalized_RMS,3.140971564680323,3.1181261957713686,0.7326633841804066,False,ratio of equal-transition aggregate absolute metrics
+C7 vs PID,TV_L_per_100m,10.411587882744515,9.44514312628283,10.232187522626067,False,ratio of equal-transition aggregate absolute metrics
+C7 vs PID,S_excess_mean,0.4414189685919984,0.5904807136895505,-25.244134421623524,False,ratio of equal-transition aggregate absolute metrics
+C7 vs PID,S_excess_cvar95,1.608343736366115,1.7733497060380856,-9.304762005493956,False,ratio of equal-transition aggregate absolute metrics
+C7 vs PID,S_out,0.7113428900242302,0.7167457508401424,-0.7538043733889033,False,ratio of equal-transition aggregate absolute metrics
+C7 vs OC-PID,composite_normalized_RMS,3.140971564680323,3.140473232562442,0.015868058123026073,False,ratio of equal-transition aggregate absolute metrics
+C7 vs OC-PID,TV_L_per_100m,10.411587882744515,9.134871431931035,13.976293594573255,False,ratio of equal-transition aggregate absolute metrics
+C7 vs OC-PID,S_excess_mean,0.4414189685919984,0.4965217049559306,-11.09774976882892,False,ratio of equal-transition aggregate absolute metrics
+C7 vs OC-PID,S_excess_cvar95,1.608343736366115,1.7296887292707799,-7.015423691627031,False,ratio of equal-transition aggregate absolute metrics
+C7 vs OC-PID,S_out,0.7113428900242302,0.7075370678188989,0.5378972181716788,False,ratio of equal-transition aggregate absolute metrics
+C7 vs C2,composite_normalized_RMS,3.140971564680323,3.127674136116037,0.42515389984964264,False,ratio of equal-transition aggregate absolute metrics
+C7 vs C2,TV_L_per_100m,10.411587882744515,11.37320341744138,-8.455098351816858,False,ratio of equal-transition aggregate absolute metrics
+C7 vs C2,S_excess_mean,0.4414189685919984,0.5021756823287173,-12.098696905229355,False,ratio of equal-transition aggregate absolute metrics
+C7 vs C2,S_excess_cvar95,1.608343736366115,1.6670674551638698,-3.5225760430901274,False,ratio of equal-transition aggregate absolute metrics
+C7 vs C2,S_out,0.7113428900242302,0.7175631468934272,-0.8668584634155901,False,ratio of equal-transition aggregate absolute metrics

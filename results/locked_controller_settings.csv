@@ -1,0 +1,5 @@
+﻿block,label,scenario_id,seed_group,comparison_base,force_common_outer_limits,timebase,distance_step_reference_m,base_control,stage_mode,stage_source,allocation_mode,dynamic_penalty,predictor_bank_path,pid_gain_scale,mpc_share,ff_share,outer_du_scale,use_filter,policy,normalized_amplitude_bound,move_limit_reference_dt_s
+data1_controller_search,C7-Core-g0.75-mpc0.14,data1_controller_search,C7-Core-g0.75-mpc0.14,C7-Core-g0.75-mpc0.14,True,archived_update,0.81298828125,C7,fixed,speed,diag,False,models/final_thickness_model.pt,0.75,0.14,0.42,0.8,True,C7,0.55,0.5
+data1_controller_search,PID-g1.20-du0.60,data1_controller_search,PID-g1.20-du0.60,PID-g1.20-du0.60,True,archived_update,0.81298828125,C0,,,,,,1.2,0.0,0.0,0.6,False,PID,0.55,0.5
+data1_controller_search,ADRC-g1.20-du0.95,data1_controller_search,ADRC-g1.20-du0.95,ADRC-g1.20-du0.95,True,archived_update,0.81298828125,ADRC,,,,,,1.2,0.0,0.0,0.95,True,OC-PID,0.55,0.5
+data1_controller_search,C2-g1.20-du0.80,data1_controller_search,C2-g1.20-du0.80,C2-g1.20-du0.80,True,archived_update,0.81298828125,C2,,,,,models/final_thickness_model.pt,1.2,0.0,0.42,0.8,False,C2,0.55,0.5

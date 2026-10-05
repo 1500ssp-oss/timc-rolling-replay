@@ -1,0 +1,95 @@
+{
+  "status": "aggregate_consistent_but_historical_training_provenance_incomplete",
+  "checks": [
+    {
+      "name": "15 distinct published target/model aggregate rows",
+      "passed": true
+    },
+    {
+      "name": "all aggregates declare 13 LOPO passes",
+      "passed": true
+    },
+    {
+      "name": "fold_SE = fold_SD / sqrt(n_folds)",
+      "passed": true
+    },
+    {
+      "name": "exit_tension_error: one-SE threshold from aggregate mean plus SE",
+      "passed": true
+    },
+    {
+      "name": "exit_tension_error: eligibility flags",
+      "passed": true
+    },
+    {
+      "name": "exit_tension_error: one lowest-complexity selection",
+      "passed": true
+    },
+    {
+      "name": "exit_tension_error: config selection and threshold",
+      "passed": true
+    },
+    {
+      "name": "exit_thickness_dev: one-SE threshold from aggregate mean plus SE",
+      "passed": true
+    },
+    {
+      "name": "exit_thickness_dev: eligibility flags",
+      "passed": true
+    },
+    {
+      "name": "exit_thickness_dev: one lowest-complexity selection",
+      "passed": true
+    },
+    {
+      "name": "exit_thickness_dev: config selection and threshold",
+      "passed": true
+    },
+    {
+      "name": "flatness_std: one-SE threshold from aggregate mean plus SE",
+      "passed": true
+    },
+    {
+      "name": "flatness_std: eligibility flags",
+      "passed": true
+    },
+    {
+      "name": "flatness_std: one lowest-complexity selection",
+      "passed": true
+    },
+    {
+      "name": "flatness_std: config selection and threshold",
+      "passed": true
+    },
+    {
+      "name": "released checkpoint kind/target/window/features",
+      "passed": true
+    }
+  ],
+  "source_summary_sha256": "e62a19adf71b65af912dae25b4e86be36b8357940271dbf28fb3bfa2e26f9d2e",
+  "frozen_checkpoint_sha256": "7cd67420191e291e9afc2d588d36f7fd9cb7ed21b2fcda46b40277a04ed770f3",
+  "checkpoint_fields_present": [
+    "best_training_loss",
+    "d0",
+    "features",
+    "kind",
+    "mu",
+    "sd",
+    "state_dict",
+    "target",
+    "window"
+  ],
+  "historical_fold_seed_scores_available": false,
+  "historical_training_curves_available": false,
+  "actual_frozen_training_updates": null,
+  "actual_frozen_training_seed": null,
+  "actual_frozen_training_device": null,
+  "actual_frozen_training_optimizer": null,
+  "historical_search_scope": "A bounded search of the available project records did not recover authentic historical per-fold/seed scores or training-run logs.",
+  "limitations": [
+    "Aggregate agreement cannot reconstruct the missing per-fold/seed predictions or prove training adequacy.",
+    "The legacy script's --epochs counted one random minibatch update per iteration; its defaults are not evidence of the actual frozen checkpoint's budget.",
+    "The frozen predictor is retained unchanged; new training instrumentation applies to future executions only.",
+    "The master replay pipeline does not regenerate predictor fitting or the historical model-selection summary."
+  ]
+}

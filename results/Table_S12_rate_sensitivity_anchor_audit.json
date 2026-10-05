@@ -1,0 +1,36 @@
+{
+  "definition": "effective_gamma = locked_policy_gamma * rate_multiplier",
+  "locked_gamma": {
+    "PID": 0.6,
+    "OC-PID": 0.95,
+    "C2": 0.8,
+    "C7-Core": 0.8
+  },
+  "rows": 16,
+  "source_replays": 160,
+  "conditions": 8,
+  "files": 10,
+  "multiplier_1_max_abs_difference": 1.7763568394002505e-15,
+  "multiplier_1_differences": {
+    "PID": {
+      "TV/100 m": 0.0,
+      "Mean two-sided band distance": 0.0,
+      "Amplitude active": 0.0
+    },
+    "OC-PID": {
+      "TV/100 m": 0.0,
+      "Mean two-sided band distance": 0.0,
+      "Amplitude active": 0.0
+    },
+    "C2": {
+      "TV/100 m": 0.0,
+      "Mean two-sided band distance": 0.0,
+      "Amplitude active": 0.0
+    },
+    "C7-Core": {
+      "TV/100 m": -1.7763568394002505e-15,
+      "Mean two-sided band distance": 0.0,
+      "Amplitude active": 0.0
+    }
+  }
+}

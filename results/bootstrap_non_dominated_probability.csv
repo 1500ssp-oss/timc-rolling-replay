@@ -1,0 +1,5 @@
+﻿policy,point_non_dominated,bootstrap_non_dominated_probability,bootstrap_draws
+PID,True,1.0,10000
+OC-PID,True,1.0,10000
+C2,True,0.9937,10000
+C7-Core,True,1.0,10000

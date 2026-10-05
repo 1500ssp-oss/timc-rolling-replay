@@ -1,0 +1,26 @@
+{
+  "diagnostic_scope": "descriptive row-weighted flatness distribution comparison; not physical-model or causal validation",
+  "canonical_step_log": "outputs/canonical/03_nominal/stage_allocation_ablation_step_logs.csv.gz",
+  "expected_data2_row_keys": 5513,
+  "observed_data2_row_keys": 5513,
+  "policies": [
+    "PID",
+    "OC-PID",
+    "C2",
+    "C7-Core"
+  ],
+  "same_row_keys_for_every_policy": true,
+  "canonical_residual_gain": 0.82,
+  "canonical_innovations_and_commands_retained": true,
+  "maturity_thresholds_recomputed_from_data1_only": true,
+  "scale_lock": {
+    "scale_lock_id": "data1-gauge-nearest-v1",
+    "scale_lock_method": "nearest Data1 recipe in Euclidean log(entry gauge), log(exit gauge) space; lexical pass_id tie-break",
+    "scale_lock_payload_sha256": "8f9030436474e6fc9590cf7d6d2e4e286ce122f7c3ca2e5ae46de877c6275808",
+    "scale_lock_data1_passes": 13,
+    "scale_lock_path": "config/data1_scale_lock.json"
+  },
+  "published_maturity_summary_reproduced": true,
+  "published_maturity_thresholds_reproduced": true,
+  "all_checks_passed": true
+}
