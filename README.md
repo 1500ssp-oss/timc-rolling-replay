@@ -1,5 +1,12 @@
 # Reproducibility / auditability package
 
+The 2026-10-08 maintenance revision fixes workstation and working-directory
+path resolution. Published weights, configurations, input hashes, results and
+figures are retained. See [MIGRATION.md](MIGRATION.md) for the optional private
+path profile, standard-library path tests, and maintenance manifest coverage.
+The original submission snapshot is commit
+`3d020e942b56e363f940bc1d8c91d3140b002cf0`.
+
 This package contains the analysis code, frozen controller configuration, one final thickness predictor, publication-level result tables, and figure files for the manuscript. It deliberately excludes raw proprietary production records, exploratory notebooks, console logs, caches, intermediate checkpoints, and non-publication outputs.
 
 Positioning: this is an **auditability package**. The raw production archive cannot be released, so the package supports (a) offline file-integrity verification and selected numerical/configuration cross-checks, and (b) a full replay rerun on an authorized machine where the 26 raw pass files are available (`code/run_pipeline.py`). The pipeline discovers those inputs recursively by their published SHA256 digests; original folder and file names are neither required nor distributed. `verify_results.py` checks the frozen lock, selected publication numbers, rate-table 1e-12 anchors, figure assets and MANIFEST hashes without needing the data. These checks do not independently reconstruct every reported value or validate the response emulator against a physical mill.

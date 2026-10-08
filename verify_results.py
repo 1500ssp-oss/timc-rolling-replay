@@ -38,6 +38,7 @@ root = Path(__file__).resolve().parent
 sys.path.insert(0, str(root / "code"))
 
 from scale_lock import SCALE_FIELDS, load_scale_lock  # noqa: E402
+from package_manifest import package_files  # noqa: E402
 
 
 def sha256(path: Path) -> str:
@@ -178,13 +179,7 @@ def main() -> int:
         check(not bad, f"manifest hashes (mismatch: {bad[:5]})")
         discovered = {
             path.relative_to(root).as_posix()
-            for path in root.rglob("*")
-            if path.is_file()
-            and ".git" not in path.parts
-            and "outputs" not in path.parts
-            and "__pycache__" not in path.parts
-            and path.suffix not in {".log", ".gz", ".pyc"}
-            and path.name != "MANIFEST_SHA256.csv"
+            for path in package_files(root)
         }
         listed = set(manifest.relative_path.astype(str))
         check(

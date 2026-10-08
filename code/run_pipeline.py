@@ -22,6 +22,10 @@ import time
 from pathlib import Path
 
 from raw_archive import resolve_archive
+from timc_paths import (
+    archive_directory, external_path, normalized_path_environment,
+    package_path, scale_lock_path,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 CODE = ROOT / "code"
@@ -33,7 +37,8 @@ def run(name: str, args: list[str], cwd: Path = ROOT, timeout: int | None = None
     print(f"\n===== STEP {name} =====", flush=True)
     print(" ".join(str(a) for a in args), flush=True)
     completed = subprocess.run(
-        [PY, *args], cwd=str(cwd), capture_output=False, timeout=timeout
+        [PY, *args], cwd=str(cwd), env=normalized_path_environment(),
+        capture_output=False, timeout=timeout
     )
     if completed.returncode != 0:
         raise RuntimeError(f"STEP {name} failed with rc={completed.returncode}")
@@ -88,9 +93,9 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--batch-root",
-        required=True,
+        default=None,
         type=Path,
-        help="folder containing the seven production-batch directories",
+        help="authorized archive root (caller-relative); defaults to external.archive_root in the migration profile",
     )
     parser.add_argument("--skip-stress", action="store_true")
     parser.add_argument(
@@ -107,6 +112,15 @@ def main() -> int:
         help="explicitly resume a partial run after scale-lock verification",
     )
     args = parser.parse_args()
+    if args.batch_root is None:
+        try:
+            args.batch_root = archive_directory(required=True)
+        except (ValueError, FileNotFoundError) as exc:
+            parser.error(str(exc))
+    else:
+        args.batch_root = external_path(args.batch_root)
+    if scale_lock_path() != package_path("config/data1_scale_lock.json"):
+        parser.error("TIMC_DATA1_SCALE_LOCK must point to this package's config/data1_scale_lock.json for the master replay")
     if not args.batch_root.is_dir():
         parser.error(f"batch root is not a directory: {args.batch_root}")
     batch_root = str(args.batch_root.resolve())
@@ -122,11 +136,11 @@ def main() -> int:
         print(f"[fresh] cleared replay outputs under {outputs}", flush=True)
 
     common = [
-        "--run-root", "config/reference_run",
+        "--run-root", str(package_path("config/reference_run")),
         "--batch-root", batch_root,
-        "--extension-script", "code/batch_archive.py",
+        "--extension-script", str(package_path("code/batch_archive.py")),
         "--dataset", "Data2",
-        "--predictor-bank-path", "models/final_thickness_model.pt",
+        "--predictor-bank-path", str(package_path("models/final_thickness_model.pt")),
     ]
 
     # 0a. Verify the frozen Data1-only scale catalogue against the supplied

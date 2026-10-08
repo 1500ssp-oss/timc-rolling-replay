@@ -2,7 +2,13 @@
 
 Associated manuscript: **Timestamp-aware assessment of control policies using archived ultra-thin strip rolling data**.
 
-This repository distributes the reproducibility / auditability package frozen on 2026-10-04 and prepared for GitHub publication on 2026-10-05. The 175 files from the original submission code ZIP are retained byte for byte. The repository adds only this note, Git attributes to preserve file hashes across platforms, and ignore rules for local/private inputs and generated outputs.
+The original reproducibility / auditability snapshot was frozen on 2026-10-04
+and published on 2026-10-05 at commit
+`3d020e942b56e363f940bc1d8c91d3140b002cf0`. At that commit, the 175 files
+from the original submission code ZIP are retained byte for byte, with three
+additional GitHub support files. The current maintenance revision changes
+path handling, tests, documentation and manifest coverage; use the original
+commit when citing the unchanged submission source snapshot.
 
 Original `Reproducibility_Code.zip` SHA256:
 
@@ -10,7 +16,26 @@ Original `Reproducibility_Code.zip` SHA256:
 ac11cbed2887c0351530b6a17a6729dc4db55bf17aa9cf7c1a6e628a5d4cac27
 ```
 
-`MANIFEST_SHA256.csv` covers the other 174 files in the frozen package. The three GitHub-specific support files are outside that original manifest. For review, use a URL containing the full Git commit SHA rather than the moving `main` branch; GitHub's archive download for that commit provides the same frozen package contents plus these three support files.
+The original `MANIFEST_SHA256.csv` covers the other 174 files in the frozen
+package, excluding the three GitHub support files. The maintenance manifest
+covers all current public package files, including those support files and new
+migration files. For review, use a URL containing the full Git commit SHA
+rather than the moving `main` branch.
+
+## Maintenance revision, 2026-10-08
+
+Package resources now resolve from the repository root; local profile values
+resolve from their profile directory; explicit CLI and environment paths
+resolve from the caller's working directory. Subprocesses retain these resolved
+paths when their working directory changes. The master replay keeps the frozen
+Data1 scale-lock requirement and uses the released predictor weights.
+
+The 118 files under `config/`, `models/`, `data_map/`, `results/` and `figures/`
+remain byte for byte identical to the submission commit. Standard-library
+migration tests and hashes validate this patch without opening raw data. No
+training or full replay was run for this maintenance revision. See
+[MIGRATION.md](MIGRATION.md) for commands, confidentiality boundaries and the
+optional example profile.
 
 ## Verification without private data
 

@@ -26,6 +26,7 @@ sys.path.insert(0, str(ROOT))
 import batch_archive as archive  # noqa: E402
 import controller_replay as runner  # noqa: E402
 import implementation_sensitivity as impl  # noqa: E402
+from package_manifest import package_files  # noqa: E402
 
 CANON = ROOT / "outputs" / "canonical" / "03_nominal"
 SENS = ROOT / "outputs" / "sensitivity"
@@ -632,19 +633,10 @@ def write_static_tables() -> None:
 
 def rebuild_manifest() -> None:
     rows = []
-    for path in sorted(ROOT.rglob("*")):
-        if (
-            path.is_file()
-            and ".git" not in path.parts
-            and "outputs" not in path.parts
-            and "__pycache__" not in path.parts
-            and path.suffix not in {".log", ".gz", ".pyc"}
-        ):
-            rel = path.relative_to(ROOT).as_posix()
-            if rel == "MANIFEST_SHA256.csv":
-                continue  # the manifest cannot hash itself
-            digest = hashlib.sha256(path.read_bytes()).hexdigest()
-            rows.append({"relative_path": rel, "bytes": path.stat().st_size, "sha256": digest})
+    for path in package_files(ROOT):
+        rel = path.relative_to(ROOT).as_posix()
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        rows.append({"relative_path": rel, "bytes": path.stat().st_size, "sha256": digest})
     pd.DataFrame(rows).to_csv(ROOT / "MANIFEST_SHA256.csv", index=False, encoding="utf-8-sig")
     print(f"[manifest] {len(rows)} files hashed")
 

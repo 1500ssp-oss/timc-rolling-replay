@@ -13,6 +13,7 @@ import torch
 from torch import nn
 
 from segmented_archived_timebase import derive_segmented_archived_timebase
+from timc_paths import data_directory
 
 
 ROOT = Path(__file__).resolve().parent
@@ -33,7 +34,7 @@ def add_training_budget_argument(parser, default: int) -> None:
 
 def frame_source_hashes(frames: list[pd.DataFrame]) -> list[str | None]:
     """Record source identities without distributing production file names."""
-    data_dir = Path(os.environ.get("ROLLING_DATA1_DIR", "data1"))
+    data_dir = data_directory("Data1")
     hashes = []
     for frame in frames:
         names = frame.get("pass_file")
@@ -90,7 +91,7 @@ def fit_sampled_updates(model, x, y, updates: int):
 def load_frames() -> list[pd.DataFrame]:
     sys.path.insert(0, str(ROOT / "engine_core"))
     from src.real_process_data import load_real_process_data
-    data_dir = Path(os.environ.get("ROLLING_DATA1_DIR", "data1"))
+    data_dir = data_directory("Data1")
     frames = load_real_process_data(str(data_dir)).frames
     result = []
     for frame in frames:

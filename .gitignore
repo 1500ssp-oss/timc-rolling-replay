@@ -8,3 +8,10 @@ private_data/
 raw_data/
 batch_archive/
 *.log
+
+# Machine-specific paths and confidential default input directories.
+migration_paths.json
+migration_paths.local*.json
+data1/
+data2/
+production_batch_root/

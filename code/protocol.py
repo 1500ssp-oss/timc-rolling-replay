@@ -25,15 +25,14 @@ from segmented_archived_timebase import derive_segmented_archived_timebase
 from scale_lock import load_scale_lock, manifest_fields, scale_override_and_provenance
 from tail_statistics import upper_tail_count
 from supported_command_motion import supported_command_deltas
+from timc_paths import data_directory, scale_lock_path
 
 
 ROOT = Path(__file__).resolve().parent
 PROJECT_DIR = ROOT / "engine_core"
-SCALE_LOCK_PATH = Path(
-    os.environ.get("TIMC_DATA1_SCALE_LOCK", ROOT.parent / "config" / "data1_scale_lock.json")
-)
-DATA1_DIR = Path(os.environ.get("ROLLING_DATA1_DIR", "data1"))
-DATA2_DIR = Path(os.environ.get("ROLLING_DATA2_DIR", "data2"))
+SCALE_LOCK_PATH = scale_lock_path()
+DATA1_DIR = data_directory("Data1")
+DATA2_DIR = data_directory("Data2")
 PLAN_DOC = ROOT / "documentation" / "controller_design_protocol.docx"
 GENERAL_PROTOCOL_DOC = ROOT / "documentation" / "general_replay_protocol.docx"
 PROTOCOL_EXTRACT_DIR = ROOT / "documentation"

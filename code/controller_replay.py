@@ -18,6 +18,7 @@ import torch
 
 from segmented_archived_timebase import derive_segmented_archived_timebase
 from supported_command_motion import reset_command_motion, supported_total_variation
+from timc_paths import package_path
 
 
 ROOT = Path(__file__).resolve().parent
@@ -110,7 +111,7 @@ class LockedModelBank:
     """
     def __init__(self, path: str):
         from model_lopo import SeqModel
-        payload = torch.load(path, map_location="cpu", weights_only=False)
+        payload = torch.load(package_path(path), map_location="cpu", weights_only=False)
         # Frozen inference stays on CPU to reproduce the locked manuscript run.
         # GPU is reserved for deep-model retraining, where it materially helps.
         self.device = torch.device("cpu")

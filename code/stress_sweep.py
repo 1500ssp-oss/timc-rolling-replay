@@ -8,6 +8,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import pandas as pd
+from timc_paths import PACKAGE_ROOT, normalized_path_environment, package_path
 
 
 def parse_args() -> argparse.Namespace:
@@ -44,14 +45,17 @@ def run_one(
         "--extension-script",
         str(extension_script),
         "--config-json",
-        str(Path(item["config"])),
+        str(package_path(item["config"])),
         "--dataset",
         "Data2",
         "--repeats",
         str(repeats),
         "--no-step-log",
     ]
-    completed = subprocess.run(command, capture_output=True, text=True, check=False)
+    completed = subprocess.run(
+        command, cwd=str(PACKAGE_ROOT), env=normalized_path_environment(),
+        capture_output=True, text=True, check=False,
+    )
     (log_dir / f"{index:02d}_{scenario_id}.stdout.log").write_text(
         completed.stdout, encoding="utf-8"
     )
