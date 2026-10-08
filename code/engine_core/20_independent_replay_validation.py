@@ -424,7 +424,7 @@ def plot_overall(overall: pd.DataFrame, out_dir: Path) -> None:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data-dir", default="data2")
+    parser.add_argument("--data-dir", default=str(PROJECT_DIR.parent.parent / "data2"))
     parser.add_argument("--out", default=str(PROJECT_DIR / "artifacts" / "independent_replay_validation"))
     parser.add_argument("--controls", default="RECORDED,C0,C2,C7,LSTM-MPC,DMC-KF,ADRC,ATT-MPC,ROBUST-MPC,ADAPTIVE-MPC")
     parser.add_argument("--selected-filter", default="ekf")

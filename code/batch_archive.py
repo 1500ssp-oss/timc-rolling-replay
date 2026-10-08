@@ -16,13 +16,14 @@ import numpy as np
 import pandas as pd
 
 from raw_archive import resolve_archive
+from timc_paths import archive_directory, external_path, package_path
 
 
 ENGINE_ROOT = Path(__file__).resolve().parent
 FULL_PROJECT = ENGINE_ROOT / "engine_core"
 CANONICAL_RUN = ENGINE_ROOT.parent / "config" / "reference_run"
 CANONICAL_ANALYSIS = ENGINE_ROOT.parent / "results"
-BATCH_ROOT = Path("production_batch_root")
+BATCH_ROOT = package_path("production_batch_root")
 DATA_MAP_PATH = ENGINE_ROOT.parent / "data_map" / "production_batch_map.csv"
 
 BATCHES = ("I", "II", "III", "IV", "V", "VI", "VII")
@@ -469,7 +470,9 @@ def main() -> int:
     args = parser.parse_args()
     if args.batch_root is not None:
         global BATCH_ROOT
-        BATCH_ROOT = args.batch_root.resolve()
+        BATCH_ROOT = external_path(args.batch_root)
+    else:
+        BATCH_ROOT = archive_directory() or BATCH_ROOT
     out = Path(args.out_root).resolve()
     out.mkdir(parents=True, exist_ok=True)
 

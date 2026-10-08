@@ -8,6 +8,7 @@ import pandas as pd
 
 import model_lopo
 from segmented_archived_timebase import derive_segmented_archived_timebase
+from timc_paths import data_directory
 
 
 def load_lopo_frames() -> list[pd.DataFrame]:
@@ -16,7 +17,7 @@ def load_lopo_frames() -> list[pd.DataFrame]:
         sys.path.insert(0, str(project))
     from src.real_process_data import load_real_process_data
 
-    data1_dir = Path(os.environ["ROLLING_DATA1_DIR"])
+    data1_dir = data_directory("Data1", required=True)
     result = []
     for frame in load_real_process_data(str(data1_dir)).frames:
         work = frame.copy()
