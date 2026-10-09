@@ -1,8 +1,37 @@
 # Reproducibility / auditability package
 
+Submission correction prepared on 9 October 2026. The original public snapshot
+`3d020e942b56e363f940bc1d8c91d3140b002cf0` remains the historical source record.
+This correction supplements that original release. It retains the frozen model
+weights, settings, publication results and figures; it restores missing motion
+diagnostic aggregation and includes the GitHub support files in the integrity
+manifest. See `SUBMISSION_VERSION.md` and `PROVENANCE_LIMITATIONS.txt` for the
+version distinction and the two unresolved historical Farch dependency hashes.
+
 This package contains the analysis code, frozen controller configuration, one final thickness predictor, publication-level result tables, and figure files for the manuscript. It deliberately excludes raw proprietary production records, exploratory notebooks, console logs, caches, intermediate checkpoints, and non-publication outputs.
 
 Positioning: this is an **auditability package**. The raw production archive cannot be released, so the package supports (a) offline file-integrity verification and selected numerical/configuration cross-checks, and (b) a full replay rerun on an authorized machine where the 26 raw pass files are available (`code/run_pipeline.py`). The pipeline discovers those inputs recursively by their published SHA256 digests; original folder and file names are neither required nor distributed. `verify_results.py` checks the frozen lock, selected publication numbers, rate-table 1e-12 anchors, figure assets and MANIFEST hashes without needing the data. These checks do not independently reconstruct every reported value or validate the response emulator against a physical mill.
+
+## Reviewer quick start
+
+Open a terminal in the extracted package root (the directory containing this
+README). In a Python environment with `requirements.txt` installed, run:
+
+```sh
+python verify_results.py
+python -m unittest discover -s tests -p "test_*.py" -v
+python code/public_statistics_audit.py
+```
+
+These commands use only public files. They check integrity, regression cases
+and selected published calculations; they do not replay confidential records.
+Start reading at `code/run_pipeline.py` (workflow),
+`code/controller_replay.py` (replay/controller execution),
+`code/batch_archive.py` (pass aggregation), and `code/run_relocking.py`
+(source-omission analysis). Frozen settings, predictor weights and reported
+tables are in `config/`, `models/` and `results/`, respectively. The full-replay
+command and input requirements are given below; `DATA_ACCESS.md` and
+`PROVENANCE_LIMITATIONS.txt` state the access and historical-evidence limits.
 
 ## Evidence boundary
 
@@ -38,7 +67,8 @@ retained command rows. Public identities alone are not raw-data reconstruction.
 The recorded `results/supported_motion_audit.json` contains aggregate evidence,
 not proprietary trajectories.
 
-For this release, complete retained canonical command logs were reaggregated.
+For the historical supported-motion release of 30 September 2026, complete
+retained canonical command logs were reaggregated.
 Data1, expanded and fixed-period trajectories were regenerated in the verified
 environment to keep their scientific summaries aligned with the current code.
 Scenarios without complete logs were regenerated with the same raw-input
@@ -49,6 +79,8 @@ original execution-timing measurements were preserved. Historical fixed-period
 differences were recorded and their scientific aggregates were replaced by the
 current replay results. This targeted refresh
 is distinct from executing the entire historical fitting and selection process.
+The 9 October 2026 correction retains those published results unchanged; it
+does not perform a new raw-data replay or repeat that historical refresh.
 The full replay command below generates the supported-motion audit anew.
 
 ## Executed implementation
@@ -106,7 +138,7 @@ scripts record these fields for future runs; they do not retroactively recover
 the historical fit. A full replay rerun uses the released frozen weights and
 does not regenerate predictor training or the historical selection summary.
 
-The package was verified on Windows 11 with Python 3.14.5, NumPy 2.3.5, pandas 3.0.3, SciPy 1.17.1, scikit-learn 1.8.0, Matplotlib 3.10.9, PyTorch 2.13.0+cpu, and asyncua 2.0.1. These versions record the verified environment; `requirements.txt` retains lower bounds so that CPU/GPU and platform-specific PyTorch builds remain installable.
+The original release recorded verification on Windows 11 with Python 3.14.5, NumPy 2.3.5, pandas 3.0.3, SciPy 1.17.1, scikit-learn 1.8.0, Matplotlib 3.10.9, PyTorch 2.13.0+cpu, and asyncua 2.0.1. These versions record the verified environment; `requirements.txt` retains lower bounds so that CPU/GPU and platform-specific PyTorch builds remain installable.
 
 ## Full rerun (requires the production batch archive)
 
@@ -116,9 +148,22 @@ From the package root:
 python code/run_pipeline.py --fresh --batch-root "C:\path\to\batch-archive"
 ```
 
-The code ZIP reproduces the numerical results, figures, integrity manifest and
-offline checks. Publication tables are written to `results/` for direct
-comparison with the manuscript and supplementary material.
+With authorized access to the hash-matched inputs, this entry point executes
+the current frozen-policy replay and writes its publication tables to `results/`
+for comparison with the retained manuscript results. It does not reconstruct
+historical predictor fitting or selection runs, and a new run is not a promise
+of identical floating-point bytes across software/hardware environments.
+
+The correction carries the existing supported-motion definitions through the
+expanded, repeat-sequence and source-omission summaries. The original release
+had added eleven diagnostic columns through internal postprocessing that was
+not included in its public workflow. This reporting correction does not change
+controller actions, parameters, response equations or the retained result CSVs.
+
+Use a separate private working copy for a full rerun: its row-level outputs
+remain confidential. Do not upload raw inputs or generated trajectories to
+GitHub. The public package permits offline integrity and selected arithmetic
+checks; possession of the model weights does not provide the confidential data.
 
 The optional `--audit-published-pid-grid` reuses the complete published
 1050-candidate PID grid, validates its candidate coverage and equal-pass scores,

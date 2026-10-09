@@ -1,30 +1,49 @@
-# TIMC submission snapshot
+# TIMC submission correction
 
-Associated manuscript: **Timestamp-aware assessment of control policies using archived ultra-thin strip rolling data**.
+Correction prepared on 9 October 2026; the original public snapshot is retained.
 
-This repository distributes the reproducibility / auditability package frozen on 2026-10-04 and prepared for GitHub publication on 2026-10-05. The 175 files from the original submission code ZIP are retained byte for byte. The repository adds only this note, Git attributes to preserve file hashes across platforms, and ignore rules for local/private inputs and generated outputs.
+Associated manuscript: **Timestamp-aware assessment of control policies using
+archived ultra-thin strip rolling data**.
 
-Original `Reproducibility_Code.zip` SHA256:
+## Original public source record
 
-```text
-ac11cbed2887c0351530b6a17a6729dc4db55bf17aa9cf7c1a6e628a5d4cac27
-```
+The original frozen submission remains available at commit
+`3d020e942b56e363f940bc1d8c91d3140b002cf0`. This correction does not modify
+that commit. The original 175-file code ZIP SHA256 was
+`ac11cbed2887c0351530b6a17a6729dc4db55bf17aa9cf7c1a6e628a5d4cac27`.
+Those identities describe the original release, not this corrected archive.
 
-`MANIFEST_SHA256.csv` covers the other 174 files in the frozen package. The three GitHub-specific support files are outside that original manifest. For review, use a URL containing the full Git commit SHA rather than the moving `main` branch; GitHub's archive download for that commit provides the same frozen package contents plus these three support files.
+## Changes in this correction
 
-## Verification without private data
+The manifest now covers every distributed file except itself, including
+`.gitattributes`, `.gitignore`, this version note and `PROVENANCE_LIMITATIONS.txt`.
+The verifier's existing coverage rule is preserved. This removes the original
+GitHub-directory coverage failure without exempting unlisted support files.
 
-From the repository root, install the dependencies listed in `requirements.txt`, then run:
+Expanded, repeat-sequence and source-omission aggregations now retain eleven
+supported-motion diagnostics that the original results received through
+historical internal postprocessing. Controller algorithms, locked parameters,
+model weights, response equations, publication result CSVs and figures are
+unchanged. This is a reporting and documentation correction.
 
-```text
-python verify_results.py
-python -m unittest discover -s tests -p "test_*.py" -v
-```
+The original Farch audit JSON is retained byte for byte. Two recorded dependency
+hashes do not bind the frozen source files; seven dependencies and six outputs
+match. `PROVENANCE_LIMITATIONS.txt` documents the gap without substituting current
+hashes into a historical execution receipt. No historical training is recreated.
 
-These checks verify package integrity and selected numerical/configuration identities. A full replay rerun requires authorized access to the 26 proprietary raw pass files; the public package does not independently regenerate every reported result or the historical predictor fitting and selection process. See [README.md](README.md), [DATA_ACCESS.md](DATA_ACCESS.md), and [TRAINING_AUDIT.md](TRAINING_AUDIT.md) for the full scope and execution instructions.
+## Verification and confidentiality
 
-## Public material and confidentiality
+From this package root, run `python verify_results.py` after installing the
+listed requirements in an appropriate environment. The data-free regression
+suite is `python -m unittest discover -s tests -p "test_*.py" -v`.
+These checks are narrower than a full raw-data replay.
 
-The code, frozen predictor weights, controller parameters, data-derived scales/quantiles, de-identified input hashes, publication-level result tables and figure assets are included within the author's confirmed publication scope. Proprietary raw production records and row-level production trajectories are confidential and are not distributed.
+The original approved public weights, code, configurations, de-identified
+aggregates and figures remain public materials. Raw production records and
+production-derived row trajectories remain confidential. Full replay requires
+authorized access to the 26 original inputs in a separate private working copy.
+The evidence is archived-data replay, not plant-side closed-loop validation.
 
-The evidence concerns archived-data replay and sensitivity/integration screens. It is not plant-side closed-loop validation, and response-emulator trajectories are not validated physical mill predictions.
+Use the fixed commit of this correction when citing the corrected code. The
+original commit above remains the historical source link and does not contain
+these corrections. No original commit, result or historical receipt is rewritten.
