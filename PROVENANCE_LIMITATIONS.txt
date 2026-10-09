@@ -1,0 +1,116 @@
+Provenance and data-access limitations
+Independent submission correction prepared on 9 October 2026
+
+This directory is a separate correction of the original public code package.
+It supplements rather than rewrites the original frozen submission or release.
+The original release, its fixed SHA-256 identities, and its retained scientific
+results remain available unchanged. Hashes below describe that original frozen
+release; they are not asserted to describe every source file in this correction
+copy after its explicitly documented edits.
+
+1. Retained Farch audit and source-version gap
+
+results/farch_forward_audit.json is the retained historical receipt with
+diagnostic_id data1_farch_zero_innovation_forward_discrepancy_v1 and generation
+time 2026-09-30T06:51:43.673172+00:00. Its original SHA-256 is:
+d140fb66e0b5a377de342b08288989a13037161baff6c165d2e753d2d3b8e34e
+
+Two of its nine dependency SHA-256 values do not match the source bytes in the
+original frozen submission and original public repository:
+
+code/protocol.py
+  Recorded in historical audit:
+  3ad762538acb2bae8f56b8d021aa0b8cac69b53b39224e21e3a99177d8e20508
+  Original frozen-release file:
+  e72e75dfef0ab5f532607fa46486db2d1fea1e70e748c5e70e2ee885160ae18f
+
+code/engine_core/15_realdata_closed_loop_suite.py
+  Recorded in historical audit:
+  06148ff8e58380437bf0d82fe160c86f6d59b98ad5e5bab8aaf6fe7f4c303bc7
+  Original frozen-release file:
+  b6c12bad5a077c799b6a61da905c0188160725bc82b12fcf67f69f590c055082
+
+The exact historical source bytes bearing the two recorded digests were not
+located in the reviewed retained project versions. Their precise execution
+source identity therefore remains unresolved. No cause or timing of the source
+change is inferred from this mismatch.
+
+2. What the retained receipt does bind
+
+The other seven registered dependencies match the original frozen files:
+  code/farch_forward_diagnostic.py
+  code/batch_archive.py
+  code/segmented_archived_timebase.py
+  code/engine_core/20_independent_replay_validation.py
+  config/data1_scale_lock.json
+  data_map/production_batch_map.csv
+  config/reference_run/03_nominal/audit/data1_stage_quantile_envelope_p025_p975.csv
+
+All six registered output SHA-256 values match the retained files in results/:
+  farch_forward_summary.csv
+  farch_forward_by_pass.csv
+  farch_forward_by_pass_segment.csv
+  farch_recorded_envelopes.csv
+  farch_recorded_envelope_occupancy.csv
+  farch_recorded_envelope_occupancy_by_pass.csv
+
+The historical JSON and those six outputs are preserved without alteration in
+this correction copy. Their original hashes remain usable for identity checks.
+The historical dependency hashes must not be replaced with current hashes to
+make the original receipt appear to bind a different source version.
+
+3. Interpretation of this gap
+
+The checks establish the identities of the retained receipt and outputs, but
+do not establish a complete chain from both frozen source files to the original
+Farch execution. The mismatch alone does not prove a numerical error, absence
+of execution, or invalidity of a reported comparison. Conversely, matching
+output hashes do not authenticate the missing historical source versions.
+
+The receipt's one-update equality and coverage fields describe the historical
+diagnostic. This disclosure is a file-identity review, not a new execution of
+that diagnostic. Farch remains a rolling-origin forward-discrepancy diagnostic
+under an assumed replay law, not physical or causal validation of a mill.
+Any future rerun must retain a separate, newly named receipt with its actual
+source hashes, inputs, environment and execution status.
+
+4. Frozen-weight replay is distinct from historical training reproduction
+
+The released pipeline loads models/final_thickness_model.pt. It does not repeat
+the original predictor fitting or recover its historical selection process.
+As documented in TRAINING_AUDIT.md, the actual training update count, seed,
+device, optimizer settings, source membership hashes, training curves and
+original per-fold/per-seed LOPO score rows were not recovered. Published
+aggregate scores and checkpoint metadata can be checked for consistency; that
+does not reconstruct the historical fit. Defaults in later instrumented
+training scripts are settings for a new experiment, not evidence of the budget
+or seed used for the frozen checkpoint. An authorized replay rerun does not
+close this training-provenance gap.
+
+5. Public materials and confidential materials
+
+The distributable materials comprise frozen model weights, code, versioned
+configurations, de-identified input identities and permitted aggregate tables,
+figures and audit summaries. Raw proprietary production CSV files are not
+distributed. Production-derived row-level feature, prediction, state, command
+and episode trajectories are also private, including row-level files generated
+by an authorized replay. Changing a filename or removing a personal identifier
+does not make such trajectories part of the public release. Published pass-,
+condition- and batch-level summaries are aggregate evidence, not raw records.
+
+6. Offline review and authorized full replay
+
+Offline verification uses the distributed files to check their identities,
+registered numerical identities, selected aggregate calculations and tested
+implementation contracts. It does not reconstruct every result from production
+records, reproduce historical training, or validate the emulator against a
+physical mill.
+
+Full replay requires lawful local access to all 26 authorized input CSV files
+matching data_map/production_batch_map.csv. It executes the released replay
+implementation using frozen weights, with the limitations disclosed here and
+in README.md, DATA_ACCESS.md and TRAINING_AUDIT.md. Run it in a separate private
+working copy so retained publication results are not overwritten. Generated
+row-level outputs remain confidential and must not be included in a public
+archive or commit. A new replay is evidence about the current execution; it is
+not retroactive proof of the original source version or predictor training.

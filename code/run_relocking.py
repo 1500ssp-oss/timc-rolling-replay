@@ -69,6 +69,12 @@ def condition_weighted(metrics: pd.DataFrame, metric_cols: list[str]) -> pd.Data
     return condition_level.groupby(["control", "fold"], as_index=False)[metric_cols].mean()
 
 
+def motion_summary_values(summary: pd.Series) -> dict[str, float]:
+    # TV/100m is already in the core row; append the other motion fields in the
+    # historical publication order after the relative-effect columns.
+    return {field: float(summary[field]) for field in archive.MOTION_METRICS if field != "TV_L_per_100m"}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch-root", required=True, type=Path)
@@ -95,7 +101,10 @@ def main() -> int:
     data2 = [rp for rp in all_passes if rp.pass_id in archive.CANONICAL_DATA2_IDS]
     data2.sort(key=lambda rp: archive.CANONICAL_SEED_INDEX[rp.pass_id])
 
-    metric_cols = ["composite_normalized_RMS", "S_out", "S_excess_mean", "S_excess_cvar95", "TV_L_per_100m"]
+    metric_cols = list(dict.fromkeys(
+        ["composite_normalized_RMS", "S_out", "S_excess_mean", "S_excess_cvar95", "TV_L_per_100m"]
+        + archive.MOTION_METRICS
+    ))
     selected_rows: list[dict] = []
     summary_rows: list[dict] = []
 
@@ -218,6 +227,7 @@ def main() -> int:
                     100.0 * (base["TV_L_per_100m"] - b["TV_L_per_100m"]) / b["TV_L_per_100m"]
                     if abs(b["TV_L_per_100m"]) > 1e-12 else np.nan
                 )
+            row.update(motion_summary_values(base))
             rows.append(row)
     out_frame = pd.DataFrame(rows)
     out_frame.to_csv(out / "source_sequence_relocking_nominal_summary.csv", index=False, encoding="utf-8-sig")

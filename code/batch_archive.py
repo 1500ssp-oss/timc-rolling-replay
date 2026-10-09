@@ -65,6 +65,23 @@ PRIMARY_METRICS = [
     "integrated_severity_excess_m",
     "episodes_per_100m",
 ]
+# Complete motion diagnostics used by the published expanded/repeat tables.
+# Keep PRIMARY_METRICS unchanged because the fixed-dt comparison uses that list.
+MOTION_METRICS = [
+    "control_total_variation",
+    "control_delta_rms",
+    "delta_u_over_peak_action",
+    "preclamp_total_variation",
+    "postclamp_total_variation",
+    "mpc_raw_total_variation",
+    "mpc_component_total_variation",
+    "TV_t_per_s",
+    "TV_L_per_100m",
+    "startup_motion",
+    "restart_motion",
+    "startup_restart_motion",
+]
+AGGREGATE_METRICS = list(dict.fromkeys(PRIMARY_METRICS + MOTION_METRICS))
 
 
 def load_module(name: str, path: Path):
@@ -298,7 +315,7 @@ def add_projection_metrics(metrics: pd.DataFrame, logs: pd.DataFrame) -> pd.Data
 
 def aggregate_batches(metrics: pd.DataFrame, batches: list[str]) -> tuple[pd.DataFrame, pd.DataFrame]:
     use = metrics[metrics.batch.isin(batches)].copy()
-    available = [metric for metric in PRIMARY_METRICS if metric in use]
+    available = [metric for metric in AGGREGATE_METRICS if metric in use]
     transition = use.groupby(["policy", "batch", "transition"], as_index=False)[available].mean()
     batch = transition.groupby(["policy", "batch"], as_index=False)[available].mean()
     overall = batch.groupby("policy", as_index=False)[available].mean()
@@ -346,7 +363,7 @@ def leave_one_target_batch_out(metrics: pd.DataFrame) -> pd.DataFrame:
 
 def repeat_summary(metrics: pd.DataFrame) -> pd.DataFrame:
     use = metrics[metrics.pass_id.isin(REPEAT_EXTENSION_IDS)].copy()
-    cols = [metric for metric in PRIMARY_METRICS if metric in use]
+    cols = [metric for metric in AGGREGATE_METRICS if metric in use]
     detailed = use[["pass_id", "transition", "policy", *cols]].sort_values(["pass_id", "policy"])
     average = use.groupby("policy", as_index=False)[cols].mean()
     average.insert(0, "pass_id", "equal-transition mean")
