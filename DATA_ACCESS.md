@@ -23,6 +23,8 @@ audit check existing file identities and selected arithmetic, configuration and
 implementation contracts. They do not regenerate every result from raw data,
 reconstruct historical model training or validate a physical rolling mill.
 
-`PROVENANCE_LIMITATIONS.txt` records two unmatched dependency hashes in the
-original retained Farch audit. Its historical receipt is preserved unchanged;
+`PROVENANCE_LIMITATIONS.txt` records the successful recovery of the two
+historical Farch source versions and their distinction from current code.
+The recovered bytes match the original audit hashes and are retained in
+a separate historical evidence archive. The historical receipt is unchanged;
 new executions must have separate dated receipts and their actual source hashes.

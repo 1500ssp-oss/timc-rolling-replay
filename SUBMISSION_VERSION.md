@@ -5,6 +5,16 @@ Correction prepared on 9 October 2026; the original public snapshot is retained.
 Associated manuscript: **Timestamp-aware assessment of control policies using
 archived ultra-thin strip rolling data**.
 
+## Recovery-confirmed documentation update
+
+The preceding correction is retained at fixed commit
+`edae92663772cd426cabb7d66d1ba5c35838cad8`. This follow-up changes only the
+four documentation files and their integrity-manifest entries after receipt
+of the historical source recovery archive. All current Python source files,
+tests, configurations, weights, publication results and figures are unchanged
+from that correction. The historical source archive is stored separately
+and is not part of the current executable code package.
+
 ## Original public source record
 
 The original frozen submission remains available at commit
@@ -26,10 +36,13 @@ historical internal postprocessing. Controller algorithms, locked parameters,
 model weights, response equations, publication result CSVs and figures are
 unchanged. This is a reporting and documentation correction.
 
-The original Farch audit JSON is retained byte for byte. Two recorded dependency
-hashes do not bind the frozen source files; seven dependencies and six outputs
-match. `PROVENANCE_LIMITATIONS.txt` documents the gap without substituting current
-hashes into a historical execution receipt. No historical training is recreated.
+The original Farch audit JSON is retained byte for byte. The two historical
+source versions previously reported as missing have now been recovered and
+independently verified against its recorded hashes. They differ from the
+current implementation and are retained separately as historical evidence.
+`PROVENANCE_LIMITATIONS.txt` documents this resolved source-identity issue
+and the version distinction. No current code, result or historical hash
+has been replaced; historical training is not recreated.
 
 ## Verification and confidentiality
 
