@@ -1,43 +1,62 @@
 Provenance and data-access limitations
-Independent submission correction prepared on 9 October 2026
+Historical-source recovery independently confirmed on 9 October 2026
 
-This directory is a separate correction of the original public code package.
-It supplements rather than rewrites the original frozen submission or release.
-The original release, its fixed SHA-256 identities, and its retained scientific
-results remain available unchanged. Hashes below describe that original frozen
-release; they are not asserted to describe every source file in this correction
-copy after its explicitly documented edits.
+This documentation update supplements the preceding submission correction.
+Both previously missing historical source versions have been recovered.
+The original frozen release, preceding correction, current Python code,
+model weights, settings, scientific outputs and audit JSON are preserved.
+Hashes described as original frozen-release hashes refer to that version,
+rather than to every edited file in a later correction.
 
-1. Retained Farch audit and source-version gap
+1. Retained Farch audit and recovered source versions
 
 results/farch_forward_audit.json is the retained historical receipt with
 diagnostic_id data1_farch_zero_innovation_forward_discrepancy_v1 and generation
 time 2026-09-30T06:51:43.673172+00:00. Its original SHA-256 is:
 d140fb66e0b5a377de342b08288989a13037161baff6c165d2e753d2d3b8e34e
 
-Two of its nine dependency SHA-256 values do not match the source bytes in the
-original frozen submission and original public repository:
+The two source versions previously missing from the reviewed local copies were
+received on 9 October 2026 in HISTORICAL_SOURCE_RECOVERY_20261009.zip. The archive
+is retained separately by the authors as historical evidence; it is not included
+in this current-code package. Its SHA-256 is:
+bca6149f8649cfec9ddd145000b1199a6d74adeab7d945bc3bade7e0efc136e8
 
 code/protocol.py
-  Recorded in historical audit:
+  Recovered historical bytes: 61407
+  Recovered SHA-256, exactly matching the historical audit:
   3ad762538acb2bae8f56b8d021aa0b8cac69b53b39224e21e3a99177d8e20508
-  Original frozen-release file:
+  Original frozen-release and current-code SHA-256:
   e72e75dfef0ab5f532607fa46486db2d1fea1e70e748c5e70e2ee885160ae18f
 
 code/engine_core/15_realdata_closed_loop_suite.py
-  Recorded in historical audit:
+  Recovered historical bytes: 52539
+  Recovered SHA-256, exactly matching the historical audit:
   06148ff8e58380437bf0d82fe160c86f6d59b98ad5e5bab8aaf6fe7f4c303bc7
-  Original frozen-release file:
+  Original frozen-release and current-code SHA-256:
   b6c12bad5a077c799b6a61da905c0188160725bc82b12fcf67f69f590c055082
 
-The exact historical source bytes bearing the two recorded digests were not
-located in the reviewed retained project versions. Their precise execution
-source identity therefore remains unresolved. No cause or timing of the source
-change is inferred from this mismatch.
+The recovered byte sequences were independently hashed on the receiving device
+and match both dependency entries in the retained audit. The archive passed CRC
+checks and all eight entries in its SHA256SUMS.txt. Its audit JSON is byte-identical
+to the retained public receipt. Its two normalized text diffs also match diffs
+computed from the recovered bytes and current final sources.
 
-2. What the retained receipt does bind
+The supplied recovery receipt identifies old-machine chat directories and two
+29 September frozen outer ZIP archives as source locations. Those old-machine
+locations and full outer archive originals were not accessed on the receiving
+device. Their location history is receipt evidence; the exact recovered bytes
+and their match to the public audit are directly verified facts.
 
-The other seven registered dependencies match the original frozen files:
+2. Version distinction and retained outputs
+
+The current sources include actual later corrections to upper-tail counting,
+continuous supported-segment command variation and separate startup/restart
+motion reporting. The source difference is not only CRLF/LF conversion.
+Recovered historical files are evidence versions and must not replace current
+sources. The historical audit binds those recovered source versions; it is not
+a receipt for executing all diagnostics under later source versions.
+
+The other seven registered dependencies matched the original frozen files:
   code/farch_forward_diagnostic.py
   code/batch_archive.py
   code/segmented_archived_timebase.py
@@ -54,25 +73,21 @@ All six registered output SHA-256 values match the retained files in results/:
   farch_recorded_envelope_occupancy.csv
   farch_recorded_envelope_occupancy_by_pass.csv
 
-The historical JSON and those six outputs are preserved without alteration in
-this correction copy. Their original hashes remain usable for identity checks.
-The historical dependency hashes must not be replaced with current hashes to
-make the original receipt appear to bind a different source version.
+The historical JSON and those six outputs are preserved without alteration.
+No historical dependency hash has been substituted with a current-source hash.
 
-3. Interpretation of this gap
+3. Scope of the resolved issue
 
-The checks establish the identities of the retained receipt and outputs, but
-do not establish a complete chain from both frozen source files to the original
-Farch execution. The mismatch alone does not prove a numerical error, absence
-of execution, or invalidity of a reported comparison. Conversely, matching
-output hashes do not authenticate the missing historical source versions.
+The missing identity of these two historical source byte sequences is resolved.
+This recovery does not establish that every scientific result was rerun under
+the later final source fingerprints. It is not a new execution of the diagnostic,
+a reconstruction of the entire historical environment or predictor training,
+or physical or causal validation of a mill.
 
 The receipt's one-update equality and coverage fields describe the historical
-diagnostic. This disclosure is a file-identity review, not a new execution of
-that diagnostic. Farch remains a rolling-origin forward-discrepancy diagnostic
-under an assumed replay law, not physical or causal validation of a mill.
-Any future rerun must retain a separate, newly named receipt with its actual
-source hashes, inputs, environment and execution status.
+diagnostic. Farch remains a rolling-origin forward-discrepancy diagnostic under
+an assumed replay law. Future executions must retain separate dated receipts
+with their actual source hashes, inputs, environment and execution status.
 
 4. Frozen-weight replay is distinct from historical training reproduction
 

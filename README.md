@@ -6,11 +6,18 @@ This correction supplements that original release. It retains the frozen model
 weights, settings, publication results and figures; it restores missing motion
 diagnostic aggregation and includes the GitHub support files in the integrity
 manifest. See `SUBMISSION_VERSION.md` and `PROVENANCE_LIMITATIONS.txt` for the
-version distinction and the two unresolved historical Farch dependency hashes.
+version distinction and the recovered historical Farch source versions.
 
 This package contains the analysis code, frozen controller configuration, one final thickness predictor, publication-level result tables, and figure files for the manuscript. It deliberately excludes raw proprietary production records, exploratory notebooks, console logs, caches, intermediate checkpoints, and non-publication outputs.
 
 Positioning: this is an **auditability package**. The raw production archive cannot be released, so the package supports (a) offline file-integrity verification and selected numerical/configuration cross-checks, and (b) a full replay rerun on an authorized machine where the 26 raw pass files are available (`code/run_pipeline.py`). The pipeline discovers those inputs recursively by their published SHA256 digests; original folder and file names are neither required nor distributed. `verify_results.py` checks the frozen lock, selected publication numbers, rate-table 1e-12 anchors, figure assets and MANIFEST hashes without needing the data. These checks do not independently reconstruct every reported value or validate the response emulator against a physical mill.
+
+Historical-source recovery confirmed on 9 October 2026. Both source versions
+named in the retained Farch audit have been recovered byte for byte and
+verified against its recorded SHA256 values. They are retained separately
+as historical evidence; current replay code and the original audit JSON
+remain unchanged. This resolves the missing-source identity issue, without
+claiming a new replay or complete historical training reconstruction.
 
 ## Reviewer quick start
 
